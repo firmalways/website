@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FirmAlways Gate | ซ่อนข้อมูลส่วนบุคคลก่อนส่งให้ AI</title>
+  <meta name="description" content="FirmAlways Gate ด่านกรองข้อมูลส่วนบุคคลภาษาไทยแบบโอเพนซอร์ส ซ่อนเลขบัตร ชื่อ เบอร์โทร และข้อมูลอ่อนไหวตาม PDPA ก่อนส่งข้อความให้ ChatGPT, Claude หรือ Gemini แล้วใส่ค่าจริงคืนในคำตอบ">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <meta property="og:title" content="FirmAlways Gate">
+  <meta property="og:description" content="ซ่อนข้อมูลส่วนบุคคลภาษาไทยก่อนส่งให้ AI โอเพนซอร์ส ติดตั้งในระบบของคุณเอง">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/mark.svg" alt="" width="28" height="28">FirmAlways Gate</a>
+    <nav class="nav" aria-label="เมนูหลัก">
+      <a href="#how">ทำงานอย่างไร</a>
+      <a href="#install">ติดตั้ง</a>
+      <a href="#benchmark">ผลทดสอบ</a>
+      <a href="pro/">Pro</a>
+      <a href="https://github.com/firmalways/gate">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>AI ได้คำถามของคุณ แต่ไม่ได้ข้อมูลลูกค้าของคุณ</h1>
+      <p class="lead">FirmAlways Gate ซ่อนเลขบัตรประชาชน ชื่อ เบอร์โทร เลขบัญชี และข้อมูลอ่อนไหวตาม PDPA ก่อนข้อความออกจากองค์กร แล้วใส่ค่าจริงคืนในคำตอบให้คุณ ฟรีและเปิดโค้ดให้ตรวจสอบทุกบรรทัด</p>
+
+      <div class="demo" aria-label="ตัวอย่างการทำงาน">
+        <div class="demo-pane">
+          <label for="demo-input">สิ่งที่คุณพิมพ์ (ลองแก้ข้อความได้)</label>
+          <textarea id="demo-input" spellcheck="false">ช่วยร่างอีเมลถึงนางสาวสมศรี รักไทย เลขบัตร 1-1017-00203-61-1 โทร 081-234-5678 เรื่องยอดค้างชำระ แล้วส่งสำเนาให้ somsri@example.co.th</textarea>
+        </div>
+        <div class="demo-pane">
+          <span class="demo-title" id="demo-output-label">สิ่งที่ AI ได้รับ</span>
+          <output id="demo-output" for="demo-input" aria-labelledby="demo-output-label" aria-live="polite"></output>
+        </div>
+        <p class="demo-status" id="demo-status" role="status"></p>
+      </div>
+      <p class="demo-note">ตัวอย่างนี้ทำงานในเบราว์เซอร์ของคุณเท่านั้น ไม่ส่งข้อความไปที่ใด และใช้กฎเพียงบางส่วนของ Gate ตัวจริง</p>
+
+      <div class="actions">
+        <a class="button primary" href="#install">ติดตั้ง Gate</a>
+        <a class="button" href="https://github.com/firmalways/gate">ดูโค้ดบน GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>ทำงานอย่างไร</h2>
+      <p class="prose">Gate ตั้งอยู่ระหว่างแอปของคุณกับผู้ให้บริการ AI ใช้ได้กับทุกเครื่องมือที่ต่อ OpenAI API ได้ แค่เปลี่ยน <code>base_url</code></p>
+      <ol class="steps">
+        <li><h3>ตรวจ</h3><p>หาข้อมูลส่วนบุคคลภาษาไทยในข้อความและไฟล์แนบ ด้วยกฎที่รู้จักรูปแบบไทย เช่น checksum ของเลขบัตร และชื่อที่เขียนติดกันโดยไม่เว้นวรรค</p></li>
+        <li><h3>ซ่อน หรือ บล็อก</h3><p>แทนค่าจริงด้วย <span class="tok">«PERSON_1»</span> ก่อนส่งออก และไม่ส่งเลยถ้าพบรหัสผ่าน API key หรือข้อมูลอ่อนไหวตามมาตรา 26</p></li>
+        <li><h3>คืนค่า</h3><p>เมื่อ AI ตอบกลับ Gate ใส่ค่าจริงคืนในเครื่องของคุณ และซ่อนข้อมูลใหม่ที่ AI อาจตอบออกมาเอง</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="detect">
+    <div class="wrap">
+      <h2>ข้อมูลที่ Gate รู้จัก</h2>
+      <div class="detect">
+        <dl>
+          <div><dt>เลขบัตรประชาชน</dt><dd>13 หลัก ตรวจ checksum ทั้งเลขอารบิกและเลขไทย ทุกรูปแบบการเว้นวรรค</dd></div>
+          <div><dt>ชื่อบุคคล</dt><dd>ชื่อที่มีคำนำหน้า เช่น นาย นางสาว คุณ ด.ช. และชื่อไม่มีคำนำหน้าเมื่อเปิด Thai NER</dd></div>
+          <div><dt>เบอร์โทรศัพท์</dt><dd>มือถือ เบอร์บ้าน และรูปแบบ +66</dd></div>
+          <div><dt>ที่อยู่</dt><dd>บ้านเลขที่ หมู่ ซอย ถนน ตำบล อำเภอ จังหวัด และรหัสไปรษณีย์</dd></div>
+          <div><dt>เลขบัญชีและบัตร</dt><dd>เลขบัญชีธนาคารไทย และเลขบัตรเครดิตที่ผ่าน Luhn</dd></div>
+        </dl>
+        <dl>
+          <div><dt>อีเมล และ LINE ID</dt><dd>รวมกรณีที่เขียนติดกับข้อความภาษาไทย</dd></div>
+          <div><dt>เอกสารเดินทางและรถ</dt><dd>เลขหนังสือเดินทาง และทะเบียนรถ</dd></div>
+          <div><dt>IP address</dt><dd>IPv4 และ IPv6 แบบเต็ม</dd></div>
+          <div><dt>รหัสลับ</dt><dd>API key, token, private key และรหัสผ่าน บล็อกโดยค่าเริ่มต้น</dd></div>
+          <div><dt>ไฟล์แนบ</dt><dd>อ่านข้อความจาก txt, csv, docx และ pdf แล้วซ่อนก่อนส่ง</dd></div>
+        </dl>
+      </div>
+      <div class="s26">
+        <h3>ข้อมูลอ่อนไหวตาม PDPA มาตรา 26</h3>
+        <p>สุขภาพ ศาสนา ประวัติอาชญากรรม ความพิการ ข้อมูลชีวภาพ พันธุกรรม ความคิดเห็นทางการเมือง สหภาพแรงงาน พฤติกรรมทางเพศ และเชื้อชาติ Gate บล็อกเมื่อข้อมูลเหล่านี้อยู่คู่กับตัวบุคคล ส่วนคำถามทั่วไปอย่าง "อาการเบาหวานมีอะไรบ้าง" ยังถามได้ตามปกติ</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="install">
+    <div class="wrap prose">
+      <h2>ติดตั้ง</h2>
+      <p>ต้องมี Python 3.11 ขึ้นไป หรือ Docker</p>
+      <h3>สคริปต์ติดตั้ง</h3>
+      <pre><code>curl -fsSL https://firmalways.meapplication.co.th/install.sh | sh</code></pre>
+      <p>สคริปต์ติดตั้งเวอร์ชันล่าสุดด้วย uv, pipx หรือ pip <a href="install.sh">อ่านสคริปต์ก่อนรัน</a></p>
+      <h3>Docker</h3>
+      <pre><code>docker run --rm -p 8787:8787 -e FIRMALWAYS_GATE_API_KEY=change-me \
+  -v "$PWD/policy.toml:/etc/firmalways/policy.toml:ro" ghcr.io/firmalways/gate</code></pre>
+      <h3>ลองดูว่า AI จะได้รับอะไร</h3>
+      <pre><code>firmalways-gate scan "ลูกค้าคุณสมชาย ใจดี เลขบัตร 1101700203611"</code></pre>
+      <h3>ใช้กับแอปที่มีอยู่</h3>
+      <pre><code>from openai import OpenAI
+client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GATE_API_KEY&gt;")</code></pre>
+      <p>ใช้ได้กับ OpenAI, Azure OpenAI ในบัญชีของคุณเอง, endpoint ที่รองรับ OpenAI API และโมเดลในเครื่อง เช่น Ollama ดูวิธีตั้งค่าทั้งหมดได้ใน <a href="https://github.com/firmalways/gate#readme">README</a> และส่วนขยายเบราว์เซอร์สำหรับ ChatGPT, Claude และ Gemini ใน <a href="https://github.com/firmalways/gate/tree/main/extension">extension</a></p>
+    </div>
+  </section>
+
+  <section id="benchmark">
+    <div class="wrap">
+      <h2>ผลทดสอบกับข้อความภาษาไทย</h2>
+      <p class="prose">ชุดทดสอบ 50 ข้อความ 54 ค่าที่ติดป้ายไว้ เทียบกับ Microsoft Presidio ที่ตั้งค่าเริ่มต้นภาษาอังกฤษ ชุดทดสอบนี้ผู้พัฒนาเขียนเอง ยังไม่มีผู้ประเมินภายนอก <a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">วิธีทดสอบและข้อจำกัด</a></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ตัวชี้วัด</th><th class="num">FirmAlways Gate</th><th class="num">Gate + Thai NER</th><th class="num">Presidio (ค่าเริ่มต้น)</th></tr></thead>
+          <tbody>
+            <tr class="ours"><td>พบค่าที่ต้องซ่อน</td><td class="num">94.4%</td><td class="num">98.2%</td><td class="num">53.7%</td></tr>
+            <tr><td>ความแม่นยำ</td><td class="num">100%</td><td class="num">98.2%</td><td class="num">74.1%</td></tr>
+            <tr><td>เลขบัตรประชาชน</td><td class="num">100%</td><td class="num">100%</td><td class="num">0%</td></tr>
+            <tr><td>ข้อมูลสุขภาพ (ม.26)</td><td class="num">100%</td><td class="num">100%</td><td class="num">33%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="promises">
+    <div class="wrap">
+      <h2>สิ่งที่ Gate สัญญา</h2>
+      <ul class="promises">
+        <li>ติดตั้งในเครื่องหรือ cloud ของคุณ Gate ไม่ติดต่อเซิร์ฟเวอร์ของเราเลย</li>
+        <li>ถ้าตรวจข้อความไม่สำเร็จ จะไม่ส่งต่อ ไม่มีการปล่อยข้อมูลออกไปแบบไม่ได้ตรวจ</li>
+        <li>บันทึก audit เฉพาะจำนวนและประเภทข้อมูล ไม่บันทึกข้อความ คำตอบ หรือค่าจริง</li>
+        <li>ค่าที่ถูกซ่อนเก็บอยู่ในหน่วยความจำของคำขอนั้นเท่านั้น แล้วหายไป</li>
+        <li>key ของผู้ให้บริการ AI อยู่ที่ Gate แอปของพนักงานไม่ต้องรู้</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>คำถามที่พบบ่อย</h2>
+      <details><summary>ใช้แล้วองค์กรผ่าน PDPA เลยไหม</summary><p>ไม่ Gate ช่วยลดความเสี่ยงและช่วยงานด้าน PDPA แต่การปฏิบัติตามกฎหมายยังต้องมีนโยบาย ความยินยอม สัญญากับผู้ประมวลผล และบันทึก ROPA</p></details>
+      <details><summary>ตรวจจับได้ครบ 100% ไหม</summary><p>ไม่มีเครื่องมือไหนทำได้ เราเปิดเผยผลทดสอบและข้อจำกัดไว้ใน GitHub และถ้าพบช่องโหว่ แจ้งได้ตาม SECURITY.md</p></details>
+      <details><summary>ซ่อนชื่อแล้ว AI ยังรู้อะไรได้บ้าง</summary><p>บริบทในประโยคยังอยู่ เช่น ความลับทางธุรกิจที่ไม่ได้เป็นข้อมูลส่วนบุคคล ถ้าข้อมูลลับมาก ใช้โมเดลในเครื่องเป็นปลายทางได้</p></details>
+      <details><summary>ใช้ฟรีได้ถึงเมื่อไหร่</summary><p>ตลอดไป Gate เป็น Apache-2.0 ใช้ในเชิงพาณิชย์ได้ ส่วน <a href="pro/">FirmAlways Pro</a> เป็นส่วนเสริมสำหรับองค์กรที่ต้องการนโยบายแยกแผนกและรายงานสำหรับ DPO</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>FirmAlways Gate, Apache-2.0</span>
+    <span><a href="pro/">FirmAlways Pro</a> &nbsp; <a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">แจ้งช่องโหว่</a> &nbsp; <a href="https://github.com/firmalways/gate">GitHub</a></span>
+  </div>
+</footer>
+<script src="assets/demo.js"></script>
+</body>
+</html>
