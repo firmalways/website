@@ -3,19 +3,88 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FirmAlways Gate | ซ่อนข้อมูลส่วนบุคคลก่อนส่งให้ AI</title>
-  <meta name="description" content="FirmAlways Gate ด่านกรองข้อมูลส่วนบุคคลภาษาไทยแบบโอเพนซอร์ส ซ่อนเลขบัตร ชื่อ เบอร์โทร และข้อมูลอ่อนไหวตาม PDPA ก่อนส่งข้อความให้ ChatGPT, Claude หรือ Gemini แล้วใส่ค่าจริงคืนในคำตอบ">
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <title>FirmAlways Gate</title>
+  <meta name="description" content="ซ่อนเลขบัตรประชาชน ชื่อ เบอร์โทร และข้อมูลอ่อนไหวตาม PDPA ก่อนส่งข้อความให้ ChatGPT, Claude หรือ Gemini แล้วคืนค่าจริงในคำตอบ ฟรีและโอเพนซอร์ส">
+  <link rel="canonical" href="https://firmalways.meapplication.co.th/">
+  <meta name="theme-color" content="#6e3ca7">
+  <link rel="icon" href="assets/brand/favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-thai-700-thai.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Gate">
-  <meta property="og:description" content="ซ่อนข้อมูลส่วนบุคคลภาษาไทยก่อนส่งให้ AI โอเพนซอร์ส ติดตั้งในระบบของคุณเอง">
+  <meta property="og:description" content="ซ่อนข้อมูลส่วนบุคคลภาษาไทยก่อนส่งข้อความให้ AI ตาม PDPA ฟรีและโอเพนซอร์ส ติดตั้งในระบบของคุณเอง">
+  <meta property="og:url" content="https://firmalways.meapplication.co.th/">
+  <meta property="og:image" content="https://firmalways.meapplication.co.th/assets/brand/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FirmAlways Gate ซ่อนข้อมูลส่วนบุคคลภาษาไทยก่อนส่งข้อความให้ AI ตาม PDPA">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FirmAlways Gate">
+  <meta name="twitter:description" content="ซ่อนข้อมูลส่วนบุคคลภาษาไทยก่อนส่งข้อความให้ AI ตาม PDPA ฟรีและโอเพนซอร์ส">
+  <meta name="twitter:image" content="https://firmalways.meapplication.co.th/assets/brand/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://firmalways.meapplication.co.th/#org",
+        "name": "FirmAlways",
+        "url": "https://firmalways.meapplication.co.th/",
+        "logo": "https://firmalways.meapplication.co.th/assets/brand/icon-512.png",
+        "sameAs": ["https://github.com/firmalways"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://firmalways.meapplication.co.th/#website",
+        "url": "https://firmalways.meapplication.co.th/",
+        "name": "FirmAlways Gate",
+        "inLanguage": "th",
+        "publisher": { "@id": "https://firmalways.meapplication.co.th/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "FirmAlways Gate",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "macOS, Linux, Windows",
+        "softwareVersion": "0.2.0",
+        "description": "ด่านกรองข้อมูลส่วนบุคคลภาษาไทยแบบโอเพนซอร์ส ซ่อนข้อมูลก่อนส่งให้ AI และคืนค่าจริงในคำตอบ",
+        "url": "https://firmalways.meapplication.co.th/",
+        "downloadUrl": "https://github.com/firmalways/gate/releases/latest",
+        "license": "https://www.apache.org/licenses/LICENSE-2.0",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "THB" },
+        "publisher": { "@id": "https://firmalways.meapplication.co.th/#org" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "ใช้แล้วองค์กรผ่าน PDPA เลยไหม",
+            "acceptedAnswer": { "@type": "Answer", "text": "ไม่ Gate ช่วยลดความเสี่ยงและช่วยงานด้าน PDPA แต่การปฏิบัติตามกฎหมายยังต้องมีนโยบาย ความยินยอม สัญญากับผู้ประมวลผล และบันทึก ROPA" } },
+          { "@type": "Question", "name": "ตรวจจับได้ครบ 100% ไหม",
+            "acceptedAnswer": { "@type": "Answer", "text": "ไม่มีเครื่องมือไหนทำได้ เราเปิดเผยผลทดสอบและข้อจำกัดไว้ใน GitHub และถ้าพบช่องโหว่ แจ้งได้ตาม SECURITY.md" } },
+          { "@type": "Question", "name": "ซ่อนชื่อแล้ว AI ยังรู้อะไรได้บ้าง",
+            "acceptedAnswer": { "@type": "Answer", "text": "บริบทในประโยคยังอยู่ เช่น ความลับทางธุรกิจที่ไม่ได้เป็นข้อมูลส่วนบุคคล ถ้าข้อมูลลับมาก ใช้โมเดลในเครื่องเป็นปลายทางได้" } },
+          { "@type": "Question", "name": "ใช้ฟรีได้ถึงเมื่อไหร่",
+            "acceptedAnswer": { "@type": "Answer", "text": "ตลอดไป Gate เป็น Apache-2.0 ใช้ในเชิงพาณิชย์ได้ ส่วน FirmAlways Pro เป็นส่วนเสริมสำหรับองค์กรที่ต้องการนโยบายแยกแผนกและรายงานสำหรับ DPO" } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+<a class="skip" href="#main">ข้ามไปที่เนื้อหา</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/mark.svg" alt="" width="28" height="28">FirmAlways Gate</a>
+    <a class="brand" href="./" aria-label="FirmAlways Gate หน้าแรก"><img src="assets/brand/logo-64.png" alt="" width="36" height="36">FirmAlways Gate</a>
     <nav class="nav" aria-label="เมนูหลัก">
       <a href="#how">ทำงานอย่างไร</a>
+      <a href="#detect">ข้อมูลที่ตรวจ</a>
       <a href="#install">ติดตั้ง</a>
       <a href="#benchmark">ผลทดสอบ</a>
       <a href="pro/">Pro</a>
@@ -24,15 +93,25 @@
   </div>
 </header>
 
-<main>
-  <section class="hero">
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
-      <h1>AI ได้คำถามของคุณ แต่ไม่ได้ข้อมูลลูกค้าของคุณ</h1>
-      <p class="lead">FirmAlways Gate ซ่อนเลขบัตรประชาชน ชื่อ เบอร์โทร เลขบัญชี และข้อมูลอ่อนไหวตาม PDPA ก่อนข้อความออกจากองค์กร แล้วใส่ค่าจริงคืนในคำตอบให้คุณ ฟรีและเปิดโค้ดให้ตรวจสอบทุกบรรทัด</p>
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title">ซ่อนข้อมูลส่วนบุคคลก่อนส่งให้ AI ด้วย FirmAlways Gate</h1>
+          <p class="lead">AI ได้คำถามของคุณ แต่ไม่ได้ข้อมูลลูกค้าของคุณ Gate ซ่อนเลขบัตรประชาชน ชื่อ เบอร์โทร เลขบัญชี และข้อมูลอ่อนไหวตาม PDPA ก่อนข้อความออกจากองค์กร แล้วใส่ค่าจริงคืนในคำตอบให้คุณ ฟรีและเปิดโค้ดให้ตรวจสอบทุกบรรทัด</p>
+          <div class="actions">
+            <a class="button primary" href="#install">ติดตั้ง Gate</a>
+            <a class="button" href="https://github.com/firmalways/gate">ดูโค้ดบน GitHub</a>
+          </div>
+        </div>
+        <img src="assets/brand/logo-256.png" alt="มาสคอต FirmAlways ผู้เฝ้าประตูข้อมูล สวมหมวกสีม่วง" width="280" height="280" fetchpriority="high">
+      </div>
 
-      <div class="demo" aria-label="ตัวอย่างการทำงาน">
+      <h2 class="demo-heading">ลองดูว่า AI จะได้รับอะไร</h2>
+      <div class="demo">
         <div class="demo-pane">
-          <label for="demo-input">สิ่งที่คุณพิมพ์ (ลองแก้ข้อความได้)</label>
+          <label for="demo-input">สิ่งที่คุณพิมพ์ (แก้ข้อความได้)</label>
           <textarea id="demo-input" spellcheck="false">ช่วยร่างอีเมลถึงนางสาวสมศรี รักไทย เลขบัตร 1-1017-00203-61-1 โทร 081-234-5678 เรื่องยอดค้างชำระ แล้วส่งสำเนาให้ somsri@example.co.th</textarea>
         </div>
         <div class="demo-pane">
@@ -42,60 +121,54 @@
         <p class="demo-status" id="demo-status" role="status"></p>
       </div>
       <p class="demo-note">ตัวอย่างนี้ทำงานในเบราว์เซอร์ของคุณเท่านั้น ไม่ส่งข้อความไปที่ใด และใช้กฎเพียงบางส่วนของ Gate ตัวจริง</p>
-
-      <div class="actions">
-        <a class="button primary" href="#install">ติดตั้ง Gate</a>
-        <a class="button" href="https://github.com/firmalways/gate">ดูโค้ดบน GitHub</a>
-      </div>
     </div>
   </section>
 
-  <section id="how">
+  <section id="how" aria-labelledby="how-title">
     <div class="wrap">
-      <h2>ทำงานอย่างไร</h2>
+      <h2 id="how-title">FirmAlways Gate ทำงานอย่างไร</h2>
       <p class="prose">Gate ตั้งอยู่ระหว่างแอปของคุณกับผู้ให้บริการ AI ใช้ได้กับทุกเครื่องมือที่ต่อ OpenAI API ได้ แค่เปลี่ยน <code>base_url</code></p>
       <ol class="steps">
-        <li><h3>ตรวจ</h3><p>หาข้อมูลส่วนบุคคลภาษาไทยในข้อความและไฟล์แนบ ด้วยกฎที่รู้จักรูปแบบไทย เช่น checksum ของเลขบัตร และชื่อที่เขียนติดกันโดยไม่เว้นวรรค</p></li>
-        <li><h3>ซ่อน หรือ บล็อก</h3><p>แทนค่าจริงด้วย <span class="tok">«PERSON_1»</span> ก่อนส่งออก และไม่ส่งเลยถ้าพบรหัสผ่าน API key หรือข้อมูลอ่อนไหวตามมาตรา 26</p></li>
-        <li><h3>คืนค่า</h3><p>เมื่อ AI ตอบกลับ Gate ใส่ค่าจริงคืนในเครื่องของคุณ และซ่อนข้อมูลใหม่ที่ AI อาจตอบออกมาเอง</p></li>
+        <li><h3>ตรวจข้อความและไฟล์</h3><p>หาข้อมูลส่วนบุคคลภาษาไทย ด้วยกฎที่รู้จักรูปแบบไทย เช่น checksum ของเลขบัตร และชื่อที่เขียนติดกันโดยไม่เว้นวรรค</p></li>
+        <li><h3>ซ่อนหรือบล็อก</h3><p>แทนค่าจริงด้วย <span class="tok">«PERSON_1»</span> ก่อนส่งออก และไม่ส่งเลยถ้าพบรหัสผ่าน API key หรือข้อมูลอ่อนไหวตามมาตรา 26</p></li>
+        <li><h3>คืนค่าในคำตอบ</h3><p>เมื่อ AI ตอบกลับ Gate ใส่ค่าจริงคืนในเครื่องของคุณ และซ่อนข้อมูลใหม่ที่ AI อาจตอบออกมาเอง</p></li>
       </ol>
     </div>
   </section>
 
-  <section id="detect">
+  <section id="detect" class="tinted" aria-labelledby="detect-title">
     <div class="wrap">
-      <h2>ข้อมูลที่ Gate รู้จัก</h2>
-      <div class="detect">
-        <dl>
-          <div><dt>เลขบัตรประชาชน</dt><dd>13 หลัก ตรวจ checksum ทั้งเลขอารบิกและเลขไทย ทุกรูปแบบการเว้นวรรค</dd></div>
-          <div><dt>ชื่อบุคคล</dt><dd>ชื่อที่มีคำนำหน้า เช่น นาย นางสาว คุณ ด.ช. และชื่อไม่มีคำนำหน้าเมื่อเปิด Thai NER</dd></div>
-          <div><dt>เบอร์โทรศัพท์</dt><dd>มือถือ เบอร์บ้าน และรูปแบบ +66</dd></div>
-          <div><dt>ที่อยู่</dt><dd>บ้านเลขที่ หมู่ ซอย ถนน ตำบล อำเภอ จังหวัด และรหัสไปรษณีย์</dd></div>
-          <div><dt>เลขบัญชีและบัตร</dt><dd>เลขบัญชีธนาคารไทย และเลขบัตรเครดิตที่ผ่าน Luhn</dd></div>
-        </dl>
-        <dl>
-          <div><dt>อีเมล และ LINE ID</dt><dd>รวมกรณีที่เขียนติดกับข้อความภาษาไทย</dd></div>
-          <div><dt>เอกสารเดินทางและรถ</dt><dd>เลขหนังสือเดินทาง และทะเบียนรถ</dd></div>
-          <div><dt>IP address</dt><dd>IPv4 และ IPv6 แบบเต็ม</dd></div>
-          <div><dt>รหัสลับ</dt><dd>API key, token, private key และรหัสผ่าน บล็อกโดยค่าเริ่มต้น</dd></div>
-          <div><dt>ไฟล์แนบ</dt><dd>อ่านข้อความจาก txt, csv, docx และ pdf แล้วซ่อนก่อนส่ง</dd></div>
-        </dl>
-      </div>
-      <div class="s26">
-        <h3>ข้อมูลอ่อนไหวตาม PDPA มาตรา 26</h3>
-        <p>สุขภาพ ศาสนา ประวัติอาชญากรรม ความพิการ ข้อมูลชีวภาพ พันธุกรรม ความคิดเห็นทางการเมือง สหภาพแรงงาน พฤติกรรมทางเพศ และเชื้อชาติ Gate บล็อกเมื่อข้อมูลเหล่านี้อยู่คู่กับตัวบุคคล ส่วนคำถามทั่วไปอย่าง "อาการเบาหวานมีอะไรบ้าง" ยังถามได้ตามปกติ</p>
+      <h2 id="detect-title">ข้อมูลส่วนบุคคลที่ Gate ตรวจจับได้</h2>
+      <div class="groups">
+        <div class="group">
+          <h3>ข้อมูลระบุตัวบุคคล</h3>
+          <div class="item"><h4>เลขบัตรประชาชน</h4><p>13 หลัก ตรวจ checksum ทั้งเลขอารบิกและเลขไทย ทุกรูปแบบการเว้นวรรค</p></div>
+          <div class="item"><h4>ชื่อบุคคล</h4><p>ชื่อที่มีคำนำหน้า เช่น นาย นางสาว คุณ ด.ช. และชื่อไม่มีคำนำหน้าเมื่อเปิด Thai NER</p></div>
+          <div class="item"><h4>เบอร์โทร อีเมล และ LINE ID</h4><p>มือถือ เบอร์บ้าน +66 และกรณีที่เขียนติดกับข้อความภาษาไทย</p></div>
+          <div class="item"><h4>ที่อยู่</h4><p>บ้านเลขที่ หมู่ ซอย ถนน ตำบล อำเภอ จังหวัด และรหัสไปรษณีย์</p></div>
+        </div>
+        <div class="group">
+          <h3>ข้อมูลการเงิน เอกสาร และระบบ</h3>
+          <div class="item"><h4>เลขบัญชีและบัตรเครดิต</h4><p>เลขบัญชีธนาคารไทย และเลขบัตรที่ผ่าน Luhn</p></div>
+          <div class="item"><h4>หนังสือเดินทางและทะเบียนรถ</h4><p>เลขหนังสือเดินทาง ทะเบียนรถ และเลขผู้เสียภาษีของนิติบุคคล</p></div>
+          <div class="item"><h4>รหัสลับและ IP address</h4><p>API key, token, private key และรหัสผ่าน บล็อกโดยค่าเริ่มต้น</p></div>
+          <div class="item"><h4>ไฟล์แนบ</h4><p>อ่านข้อความจาก txt, csv, docx และ pdf แล้วซ่อนก่อนส่ง</p></div>
+        </div>
+        <div class="group s26">
+          <h3>ข้อมูลอ่อนไหวตาม PDPA มาตรา 26</h3>
+          <p>สุขภาพ ศาสนา ประวัติอาชญากรรม ความพิการ ข้อมูลชีวภาพ พันธุกรรม ความคิดเห็นทางการเมือง สหภาพแรงงาน พฤติกรรมทางเพศ และเชื้อชาติ Gate บล็อกเมื่อข้อมูลเหล่านี้อยู่คู่กับตัวบุคคล ส่วนคำถามทั่วไปอย่าง "อาการเบาหวานมีอะไรบ้าง" ยังถามได้ตามปกติ</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="install" class="install">
+  <section id="install" class="install" aria-labelledby="install-title">
     <div class="wrap prose">
-      <h2>ติดตั้ง</h2>
+      <h2 id="install-title">ติดตั้ง FirmAlways Gate</h2>
       <p>ต้องมี Python 3.11 ขึ้นไป หรือ Docker</p>
       <h3>สคริปต์ติดตั้ง</h3>
       <pre><code>curl -fsSL https://firmalways.meapplication.co.th/install.sh | sh</code></pre>
-      <p>สคริปต์ติดตั้งเวอร์ชันล่าสุดด้วย uv, pipx หรือ pip <a href="install.sh">อ่านสคริปต์ก่อนรัน</a></p>
-      <p>หรือดาวน์โหลดสคริปต์เดียวกันจาก GitHub release</p>
+      <p>สคริปต์ติดตั้งเวอร์ชันล่าสุดด้วย uv, pipx หรือ pip <a href="install.sh">อ่านสคริปต์ก่อนรัน</a> หรือใช้สคริปต์เดียวกันจาก GitHub release</p>
       <pre><code>curl -fsSL https://github.com/firmalways/gate/releases/latest/download/install.sh | sh</code></pre>
       <h3>Docker</h3>
       <pre><code>docker run --rm -p 8787:8787 -e FIRMALWAYS_GATE_API_KEY=change-me \
@@ -105,31 +178,32 @@
       <h3>ใช้กับแอปที่มีอยู่</h3>
       <pre><code>from openai import OpenAI
 client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GATE_API_KEY&gt;")</code></pre>
-      <p>ใช้ได้กับ OpenAI, Azure OpenAI ในบัญชีของคุณเอง, endpoint ที่รองรับ OpenAI API และโมเดลในเครื่อง เช่น Ollama ดูวิธีตั้งค่าทั้งหมดได้ใน <a href="https://github.com/firmalways/gate#readme">README</a> และส่วนขยายเบราว์เซอร์สำหรับ ChatGPT, Claude และ Gemini ใน <a href="https://github.com/firmalways/gate/tree/main/extension">extension</a></p>
+      <p>ใช้ได้กับ OpenAI, Azure OpenAI ในบัญชีของคุณเอง, endpoint ที่รองรับ OpenAI API และโมเดลในเครื่อง เช่น Ollama ดูวิธีตั้งค่าทั้งหมดใน <a href="https://github.com/firmalways/gate#readme">README</a> และส่วนขยายเบราว์เซอร์สำหรับ ChatGPT, Claude และ Gemini ใน <a href="https://github.com/firmalways/gate/tree/main/extension">extension</a></p>
     </div>
   </section>
 
-  <section id="benchmark">
+  <section id="benchmark" class="tinted" aria-labelledby="benchmark-title">
     <div class="wrap">
-      <h2>ผลทดสอบกับข้อความภาษาไทย</h2>
+      <h2 id="benchmark-title">ผลทดสอบกับข้อความภาษาไทย</h2>
       <p class="prose">ชุดทดสอบ 50 ข้อความ 54 ค่าที่ติดป้ายไว้ เทียบกับ Microsoft Presidio ที่ตั้งค่าเริ่มต้นภาษาอังกฤษ ชุดทดสอบนี้ผู้พัฒนาเขียนเอง ยังไม่มีผู้ประเมินภายนอก <a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">วิธีทดสอบและข้อจำกัด</a></p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>ตัวชี้วัด</th><th class="num">FirmAlways Gate</th><th class="num">Gate + Thai NER</th><th class="num">Presidio (ค่าเริ่มต้น)</th></tr></thead>
+          <caption>สัดส่วนข้อมูลที่ตรวจพบ ยิ่งสูงยิ่งดี</caption>
+          <thead><tr><th scope="col">ตัวชี้วัด</th><th scope="col" class="num">FirmAlways Gate</th><th scope="col" class="num">Gate + Thai NER</th><th scope="col" class="num">Presidio (ค่าเริ่มต้น)</th></tr></thead>
           <tbody>
-            <tr class="ours"><td>พบค่าที่ต้องซ่อน</td><td class="num">94.4%</td><td class="num">98.2%</td><td class="num">53.7%</td></tr>
-            <tr><td>ความแม่นยำ</td><td class="num">100%</td><td class="num">98.2%</td><td class="num">74.1%</td></tr>
-            <tr><td>เลขบัตรประชาชน</td><td class="num">100%</td><td class="num">100%</td><td class="num">0%</td></tr>
-            <tr><td>ข้อมูลสุขภาพ (ม.26)</td><td class="num">100%</td><td class="num">100%</td><td class="num">33%</td></tr>
+            <tr><th scope="row">พบค่าที่ต้องซ่อน</th><td class="num win">94.4%</td><td class="num win">98.2%</td><td class="num lose">53.7%</td></tr>
+            <tr><th scope="row">ความแม่นยำ</th><td class="num win">100%</td><td class="num">98.2%</td><td class="num lose">74.1%</td></tr>
+            <tr><th scope="row">เลขบัตรประชาชน</th><td class="num win">100%</td><td class="num win">100%</td><td class="num lose">0%</td></tr>
+            <tr><th scope="row">ข้อมูลสุขภาพ (ม.26)</th><td class="num win">100%</td><td class="num win">100%</td><td class="num lose">33%</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <section id="promises">
+  <section id="promises" aria-labelledby="promises-title">
     <div class="wrap">
-      <h2>สิ่งที่ Gate สัญญา</h2>
+      <h2 id="promises-title">สิ่งที่ FirmAlways Gate สัญญา</h2>
       <ul class="promises">
         <li>ติดตั้งในเครื่องหรือ cloud ของคุณ Gate ไม่ติดต่อเซิร์ฟเวอร์ของเราเลย</li>
         <li>ถ้าตรวจข้อความไม่สำเร็จ จะไม่ส่งต่อ ไม่มีการปล่อยข้อมูลออกไปแบบไม่ได้ตรวจ</li>
@@ -140,13 +214,13 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="faq">
+  <section id="faq" class="tinted" aria-labelledby="faq-title">
     <div class="wrap">
-      <h2>คำถามที่พบบ่อย</h2>
-      <details><summary>ใช้แล้วองค์กรผ่าน PDPA เลยไหม</summary><p>ไม่ Gate ช่วยลดความเสี่ยงและช่วยงานด้าน PDPA แต่การปฏิบัติตามกฎหมายยังต้องมีนโยบาย ความยินยอม สัญญากับผู้ประมวลผล และบันทึก ROPA</p></details>
-      <details><summary>ตรวจจับได้ครบ 100% ไหม</summary><p>ไม่มีเครื่องมือไหนทำได้ เราเปิดเผยผลทดสอบและข้อจำกัดไว้ใน GitHub และถ้าพบช่องโหว่ แจ้งได้ตาม SECURITY.md</p></details>
-      <details><summary>ซ่อนชื่อแล้ว AI ยังรู้อะไรได้บ้าง</summary><p>บริบทในประโยคยังอยู่ เช่น ความลับทางธุรกิจที่ไม่ได้เป็นข้อมูลส่วนบุคคล ถ้าข้อมูลลับมาก ใช้โมเดลในเครื่องเป็นปลายทางได้</p></details>
-      <details><summary>ใช้ฟรีได้ถึงเมื่อไหร่</summary><p>ตลอดไป Gate เป็น Apache-2.0 ใช้ในเชิงพาณิชย์ได้ ส่วน <a href="pro/">FirmAlways Pro</a> เป็นส่วนเสริมสำหรับองค์กรที่ต้องการนโยบายแยกแผนกและรายงานสำหรับ DPO</p></details>
+      <h2 id="faq-title">คำถามที่พบบ่อย</h2>
+      <details><summary><h3>ใช้แล้วองค์กรผ่าน PDPA เลยไหม</h3></summary><p>ไม่ Gate ช่วยลดความเสี่ยงและช่วยงานด้าน PDPA แต่การปฏิบัติตามกฎหมายยังต้องมีนโยบาย ความยินยอม สัญญากับผู้ประมวลผล และบันทึก ROPA</p></details>
+      <details><summary><h3>ตรวจจับได้ครบ 100% ไหม</h3></summary><p>ไม่มีเครื่องมือไหนทำได้ เราเปิดเผยผลทดสอบและข้อจำกัดไว้ใน GitHub และถ้าพบช่องโหว่ แจ้งได้ตาม SECURITY.md</p></details>
+      <details><summary><h3>ซ่อนชื่อแล้ว AI ยังรู้อะไรได้บ้าง</h3></summary><p>บริบทในประโยคยังอยู่ เช่น ความลับทางธุรกิจที่ไม่ได้เป็นข้อมูลส่วนบุคคล ถ้าข้อมูลลับมาก ใช้โมเดลในเครื่องเป็นปลายทางได้</p></details>
+      <details><summary><h3>ใช้ฟรีได้ถึงเมื่อไหร่</h3></summary><p>ตลอดไป Gate เป็น Apache-2.0 ใช้ในเชิงพาณิชย์ได้ ส่วน <a href="pro/">FirmAlways Pro</a> เป็นส่วนเสริมสำหรับองค์กรที่ต้องการนโยบายแยกแผนกและรายงานสำหรับ DPO</p></details>
     </div>
   </section>
 </main>
@@ -154,9 +228,13 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
 <footer class="site-footer">
   <div class="wrap">
     <span>FirmAlways Gate, Apache-2.0</span>
-    <span><a href="pro/">FirmAlways Pro</a> &nbsp; <a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">แจ้งช่องโหว่</a> &nbsp; <a href="https://github.com/firmalways/gate">GitHub</a></span>
+    <nav aria-label="ลิงก์ท้ายหน้า">
+      <a href="pro/">FirmAlways Pro</a>
+      <a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">แจ้งช่องโหว่</a>
+      <a href="https://github.com/firmalways/gate">GitHub</a>
+    </nav>
   </div>
 </footer>
-<script src="assets/demo.js"></script>
+<script src="assets/demo.js" defer></script>
 </body>
 </html>
