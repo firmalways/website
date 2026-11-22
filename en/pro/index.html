@@ -14,7 +14,7 @@
   <link rel="icon" href="../../assets/brand/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="../../assets/brand/apple-touch-icon.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../assets/style.css?v=4">
+  <link rel="stylesheet" href="../../assets/style.css?v=5">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Pro">
@@ -85,7 +85,7 @@
     </div>
   </section>
 
-  <section id="features" aria-labelledby="features-title">
+  <section id="features" data-glow="sky" aria-labelledby="features-title">
     <div class="wrap">
       <h2 id="features-title">What FirmAlways Pro adds to Gate</h2>
       <div class="groups">
@@ -104,7 +104,7 @@
     </div>
   </section>
 
-  <section id="deploy" class="tinted" aria-labelledby="deploy-title">
+  <section id="deploy" data-glow="violet" aria-labelledby="deploy-title">
     <div class="wrap">
       <h2 id="deploy-title">Your data stays in your systems</h2>
       <div class="deploy">
@@ -118,7 +118,7 @@
     </div>
   </section>
 
-  <section id="plans" aria-labelledby="plans-title">
+  <section id="plans" data-glow="indigo" aria-labelledby="plans-title">
     <div class="wrap">
       <h2 id="plans-title">FirmAlways Pro plans</h2>
       <p class="prose">Pricing depends on the number of users and how you deploy. Contact us for a quote.</p>
@@ -138,12 +138,42 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>FirmAlways Pro</span>
-    <nav aria-label="Footer links">
-      <a href="../">FirmAlways Gate (free)</a>
-      <a href="https://github.com/firmalways/gate">GitHub</a>
-      <a href="../../pro/" hreflang="th" lang="th">ภาษาไทย</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../en/"><img src="../../assets/brand/logo-64.png" alt="" width="32" height="32">FirmAlways</a>
+        <p>A privacy gateway for Thai personal data before it reaches AI. Open source, runs in your own systems and never contacts our servers.</p>
+        <div class="actions">
+          <a class="button primary" href="../../en/#install">Install Gate</a>
+          <a class="button" href="../../en/pro/">See FirmAlways Pro</a>
+        </div>
+      </div>
+      <nav aria-labelledby="footer-col-0"><h2 class="footer-title" id="footer-col-0">Product</h2><ul class="footer-links">
+        <li><a href="../../en/">FirmAlways Gate</a></li>
+        <li><a href="../../en/pro/">FirmAlways Pro</a></li>
+        <li><a href="https://github.com/firmalways/gate/tree/main/extension">Browser extension</a></li>
+        <li><a href="https://github.com/firmalways/gate/releases/latest">Latest release</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-1"><h2 class="footer-title" id="footer-col-1">Docs</h2><ul class="footer-links">
+        <li><a href="../../en/#install">Install guide</a></li>
+        <li><a href="https://github.com/firmalways/gate#readme">User guide</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/policy.example.toml">Example policy</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">Benchmark</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-2"><h2 class="footer-title" id="footer-col-2">Security and law</h2><ul class="footer-links">
+        <li><a href="../../en/#law">PDPA and ISO</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">Report a vulnerability</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/LICENSE">Apache-2.0 licence</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-3"><h2 class="footer-title" id="footer-col-3">Community</h2><ul class="footer-links">
+        <li><a href="https://github.com/firmalways">GitHub</a></li>
+        <li><a href="https://github.com/firmalways/gate/discussions/new?category=pro">Request a Pro pilot</a></li>
+        <li><a href="https://github.com/firmalways/gate/issues">Report an issue</a></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FirmAlways. FirmAlways Gate is released under Apache-2.0.</span>
+      <span><a href="../../pro/" hreflang="th" lang="th">ภาษาไทย</a></span>
+    </div>
   </div>
 </footer>
 </body>

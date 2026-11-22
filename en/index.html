@@ -14,7 +14,7 @@
   <link rel="icon" href="../assets/brand/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=5">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Gate">
@@ -31,45 +31,42 @@
   <meta name="twitter:description" content="Mask Thai personal data before prompts reach AI. Free and open source.">
   <meta name="twitter:image" content="https://firmalways.meapplication.co.th/assets/brand/og-image.png">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://firmalways.meapplication.co.th/en/#page",
-        "url": "https://firmalways.meapplication.co.th/en/",
-        "name": "FirmAlways Gate",
-        "inLanguage": "en",
-        "isPartOf": { "@id": "https://firmalways.meapplication.co.th/#website" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "FirmAlways Gate",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": "macOS, Linux, Windows",
-        "softwareVersion": "0.2.0",
-        "description": "Open-source AI privacy gateway for Thai personal data: masks data before it reaches an AI provider and restores it in the answer.",
-        "url": "https://firmalways.meapplication.co.th/en/",
-        "downloadUrl": "https://github.com/firmalways/gate/releases/latest",
-        "license": "https://www.apache.org/licenses/LICENSE-2.0",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "THB" },
-        "publisher": { "@type": "Organization", "name": "FirmAlways", "url": "https://firmalways.meapplication.co.th/" }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "Does using Gate make my organisation PDPA compliant?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. Gate reduces risk and supports PDPA work, but compliance still needs policies, consent, processor agreements and a record of processing activities (ROPA)." } },
-          { "@type": "Question", "name": "Does it detect 100% of personal data?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No tool can. We publish our test results and limits on GitHub, and you can report a weakness privately as described in SECURITY.md." } },
-          { "@type": "Question", "name": "What can the AI still learn once names are masked?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The context of the sentence remains, for example business secrets that are not personal data. For very sensitive work, send requests to a local model instead." } },
-          { "@type": "Question", "name": "How long is it free?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Forever. Gate is Apache-2.0 and free for commercial use. FirmAlways Pro is an add-on for organisations that need per-department policies and reports for their DPO." } }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://firmalways.meapplication.co.th/en/#page",
+      "url": "https://firmalways.meapplication.co.th/en/",
+      "name": "FirmAlways Gate",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://firmalways.meapplication.co.th/#website"
       }
-    ]
-  }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "FirmAlways Gate",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "macOS, Linux, Windows",
+      "softwareVersion": "0.2.0",
+      "description": "Open-source AI privacy gateway for Thai personal data: masks data before it reaches an AI provider and restores it in the answer.",
+      "url": "https://firmalways.meapplication.co.th/en/",
+      "downloadUrl": "https://github.com/firmalways/gate/releases/latest",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "THB"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FirmAlways",
+        "url": "https://firmalways.meapplication.co.th/"
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -111,7 +108,7 @@
         <div class="demo-pane">
           <label for="demo-input">What you type (edit it)</label>
           <textarea id="demo-input" spellcheck="false">Draft a payment reminder to นางสาวสมศรี รักไทย, ID 1-1017-00203-61-1, date of birth 1987-03-12, phone 081-234-5678, cc somsri@example.co.th
-Address: ธันยาคารคอนโดมิเนียม 50/38 ซอยลาดพร้าว 38 ถนนลาดพร้าว แขวงสามเสนนอก เขตห้วยขวาง กรุงเทพมหานคร 10310</textarea>
+Address: ถนนลาดพร้าว แขวงสามเสนนอก เขตห้วยขวาง กรุงเทพมหานคร 10310</textarea>
         </div>
         <div class="demo-pane">
           <span class="demo-title" id="demo-output-label">What the AI receives</span>
@@ -123,7 +120,7 @@ Address: ธันยาคารคอนโดมิเนียม 50/38 ซ�
     </div>
   </section>
 
-  <section id="detect" class="alt" aria-labelledby="detect-title">
+  <section id="detect" data-glow="sky" aria-labelledby="detect-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="detect-title">Personal data FirmAlways Gate detects</h2>
@@ -151,7 +148,7 @@ Address: ธันยาคารคอนโดมิเนียม 50/38 ซ�
     </div>
   </section>
 
-  <section id="flow" aria-labelledby="flow-title">
+  <section id="flow" data-glow="indigo" aria-labelledby="flow-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="flow-title">How FirmAlways Gate works</h2>
@@ -170,7 +167,7 @@ Address: ธันยาคารคอนโดมิเนียม 50/38 ซ�
     </div>
   </section>
 
-  <section id="risks" class="alt" aria-labelledby="risks-title">
+  <section id="risks" data-glow="rose" aria-labelledby="risks-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="risks-title">What happens when the data reaches fraudsters</h2>
@@ -205,7 +202,7 @@ Address: ธันยาคารคอนโดมิเนียม 50/38 ซ�
     </div>
   </section>
 
-  <section id="law" aria-labelledby="law-title">
+  <section id="law" data-glow="violet" aria-labelledby="law-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="law-title">Why organisations must care: the law requires it, and the harm is real</h2>
@@ -273,7 +270,7 @@ Address: ธันยาคารคอนโดมิเนียม 50/38 ซ�
     </div>
   </section>
 
-  <section id="install" class="install alt" aria-labelledby="install-title">
+  <section id="install" class="install" data-glow="indigo" aria-labelledby="install-title">
     <div class="wrap prose">
       <h2 id="install-title">Install FirmAlways Gate</h2>
       <p class="muted">Requires Python 3.11 or newer, or Docker.</p>
@@ -293,7 +290,7 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="benchmark" aria-labelledby="benchmark-title">
+  <section id="benchmark" data-glow="sky" aria-labelledby="benchmark-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="benchmark-title">Benchmark on Thai text</h2>
@@ -314,7 +311,7 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="supports" class="alt" aria-labelledby="supports-title">
+  <section id="supports" data-glow="violet" aria-labelledby="supports-title">
     <div class="wrap">
       <div class="section-head"><h2 id="supports-title">What FirmAlways Gate supports</h2></div>
       <ul class="checks">
@@ -327,30 +324,48 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="faq" aria-labelledby="faq-title">
-    <div class="wrap">
-      <div class="section-head"><h2 id="faq-title">Frequently asked questions</h2></div>
-      <div class="faq">
-        <details><summary><h3>Does using Gate make my organisation PDPA compliant?</h3></summary><p>No. Gate reduces risk and supports PDPA work, but compliance still needs policies, consent, processor agreements and a record of processing activities (ROPA).</p></details>
-        <details><summary><h3>Does it detect 100% of personal data?</h3></summary><p>No tool can. We publish our test results and limits on GitHub, and you can report a weakness privately as described in SECURITY.md.</p></details>
-        <details><summary><h3>What can the AI still learn once names are masked?</h3></summary><p>The context of the sentence remains, for example business secrets that are not personal data. For very sensitive work, send requests to a local model instead.</p></details>
-        <details><summary><h3>How long is it free?</h3></summary><p>Forever. Gate is Apache-2.0 and free for commercial use. <a href="pro/">FirmAlways Pro</a> is an add-on for organisations that need per-department policies and reports for their DPO.</p></details>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>FirmAlways Gate, Apache-2.0</span>
-    <nav aria-label="Footer links">
-      <a href="pro/">FirmAlways Pro</a>
-      <a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">Report a vulnerability</a>
-      <a href="https://github.com/firmalways/gate">GitHub</a>
-      <a href="../" hreflang="th" lang="th">ภาษาไทย</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../en/"><img src="../assets/brand/logo-64.png" alt="" width="32" height="32">FirmAlways</a>
+        <p>A privacy gateway for Thai personal data before it reaches AI. Open source, runs in your own systems and never contacts our servers.</p>
+        <div class="actions">
+          <a class="button primary" href="../en/#install">Install Gate</a>
+          <a class="button" href="../en/pro/">See FirmAlways Pro</a>
+        </div>
+      </div>
+      <nav aria-labelledby="footer-col-0"><h2 class="footer-title" id="footer-col-0">Product</h2><ul class="footer-links">
+        <li><a href="../en/">FirmAlways Gate</a></li>
+        <li><a href="../en/pro/">FirmAlways Pro</a></li>
+        <li><a href="https://github.com/firmalways/gate/tree/main/extension">Browser extension</a></li>
+        <li><a href="https://github.com/firmalways/gate/releases/latest">Latest release</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-1"><h2 class="footer-title" id="footer-col-1">Docs</h2><ul class="footer-links">
+        <li><a href="../en/#install">Install guide</a></li>
+        <li><a href="https://github.com/firmalways/gate#readme">User guide</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/policy.example.toml">Example policy</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">Benchmark</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-2"><h2 class="footer-title" id="footer-col-2">Security and law</h2><ul class="footer-links">
+        <li><a href="../en/#law">PDPA and ISO</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">Report a vulnerability</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/LICENSE">Apache-2.0 licence</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-3"><h2 class="footer-title" id="footer-col-3">Community</h2><ul class="footer-links">
+        <li><a href="https://github.com/firmalways">GitHub</a></li>
+        <li><a href="https://github.com/firmalways/gate/discussions/new?category=pro">Request a Pro pilot</a></li>
+        <li><a href="https://github.com/firmalways/gate/issues">Report an issue</a></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FirmAlways. FirmAlways Gate is released under Apache-2.0.</span>
+      <span><a href="../" hreflang="th" lang="th">ภาษาไทย</a></span>
+    </div>
   </div>
 </footer>
-<script src="../assets/demo.js?v=4" defer></script>
+<script src="../assets/demo.js?v=5" defer></script>
 </body>
 </html>

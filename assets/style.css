@@ -68,9 +68,44 @@ p { margin: 0 0 1em; }
 .muted { color: var(--muted-fg); }
 .small { font-size: 0.9rem; color: var(--subtle-fg); }
 
-section { padding: 88px 0; }
-section + section { border-top: 1px solid var(--border); }
-section.alt { background: #fafafa; }
+section { position: relative; isolation: isolate; padding: 96px 0; }
+/* Sections flow on one white canvas: a fading hairline between them, and a soft glow
+   from the hero's gradient family, colour-coded by meaning. */
+section:not(.hero)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100% - 32px, 1120px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+}
+section[data-glow]::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+section[data-glow="sky"]::after {
+  background:
+    radial-gradient(40% 50% at 0% 0%, rgba(56, 189, 248, 0.16), transparent 70%),
+    radial-gradient(30% 40% at 100% 35%, rgba(99, 102, 241, 0.07), transparent 70%);
+}
+section[data-glow="indigo"]::after {
+  background:
+    radial-gradient(50% 55% at 50% 0%, rgba(99, 102, 241, 0.16), transparent 70%),
+    linear-gradient(var(--border) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0 / 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 0%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 70% at 50% 0%, #000 30%, transparent 75%);
+  opacity: 0.8;
+}
+section[data-glow="rose"]::after {
+  background:
+    radial-gradient(40% 50% at 100% 0%, rgba(244, 63, 94, 0.14), transparent 70%),
+    radial-gradient(30% 40% at 0% 85%, rgba(244, 63, 94, 0.06), transparent 70%);
+}
+section[data-glow="violet"]::after {
+  background:
+    radial-gradient(40% 45% at 0% 5%, rgba(139, 92, 246, 0.15), transparent 70%),
+    radial-gradient(35% 40% at 100% 90%, rgba(99, 102, 241, 0.07), transparent 70%);
+}
 .section-head { max-width: 760px; margin: 0 auto 40px; text-align: center; }
 .section-head .lead { margin-inline: auto; }
 
@@ -211,16 +246,6 @@ p code, li code, td code { background: var(--muted); border: 1px solid var(--bor
 .checks li { position: relative; padding: 14px 16px 14px 48px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
 .checks li::before { content: ""; position: absolute; left: 18px; top: 21px; width: 12px; height: 7px; border-left: 2px solid #16a34a; border-bottom: 2px solid #16a34a; transform: rotate(-45deg); }
 
-/* FAQ */
-.faq { max-width: 760px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
-details { padding: 16px 20px; }
-details + details { border-top: 1px solid var(--border); }
-summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
-summary::-webkit-details-marker { display: none; }
-summary::after { content: "+"; color: var(--subtle-fg); font-weight: 500; }
-details[open] summary::after { content: "−"; }
-summary h3 { display: inline; font-size: 1rem; font-weight: 600; margin: 0; }
-details p { margin: 10px 0 0; color: var(--muted-fg); }
 
 /* Pro page */
 .groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
@@ -242,14 +267,47 @@ details p { margin: 10px 0 0; color: var(--muted-fg); }
 .promises li { position: relative; padding: 12px 16px 12px 46px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
 .promises li::before { content: ""; position: absolute; left: 18px; top: 19px; width: 12px; height: 7px; border-left: 2px solid #16a34a; border-bottom: 2px solid #16a34a; transform: rotate(-45deg); }
 
-/* Footer */
-.site-footer { border-top: 1px solid var(--border); padding: 32px 0 48px; color: var(--subtle-fg); font-size: 0.9rem; background: #fafafa; }
-.site-footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
-.site-footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
+/* Footer: the hero's grid and glow, mirrored to fade up from the bottom */
+.site-footer { position: relative; isolation: isolate; overflow: hidden; padding: 80px 0 28px; color: var(--muted-fg); font-size: 0.92rem; }
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(45% 60% at 15% 100%, rgba(99, 102, 241, 0.16), transparent 70%),
+    radial-gradient(40% 55% at 90% 100%, rgba(56, 189, 248, 0.14), transparent 70%),
+    linear-gradient(var(--border) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0 / 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 100%, #000 25%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 90% at 50% 100%, #000 25%, transparent 75%);
+  opacity: 0.85;
+}
+.site-footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100% - 32px, 1120px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+}
+.footer-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)); gap: 32px 28px; }
+.footer-brand p { margin: 12px 0 16px; max-width: 34ch; }
+.footer-brand .actions { margin-top: 0; }
+.footer-title { font-size: 0.88rem; font-weight: 600; color: var(--fg); margin: 6px 0 12px; letter-spacing: 0; }
+.footer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .site-footer a { color: var(--muted-fg); text-decoration: none; }
 .site-footer a:hover { color: var(--fg); }
+.site-footer .button { color: var(--fg); }
+.site-footer .button.primary { color: var(--primary-fg); }
+.footer-bottom { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; font-size: 0.85rem; color: var(--subtle-fg); }
+.footer-bottom a { color: var(--muted-fg); }
 
 @media (max-width: 960px) {
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-brand { grid-column: 1 / -1; }
   .flow { grid-template-columns: 1fr; gap: 26px; }
   .flow > li:not(:last-child)::after { top: auto; bottom: -21px; right: 50%; transform: translateX(50%) rotate(135deg); }
   .grid.cols-3, .grid.cols-4, .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }

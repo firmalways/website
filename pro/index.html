@@ -14,7 +14,7 @@
   <link rel="icon" href="../assets/brand/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=5">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Pro">
@@ -85,7 +85,7 @@
     </div>
   </section>
 
-  <section id="features" aria-labelledby="features-title">
+  <section id="features" data-glow="sky" aria-labelledby="features-title">
     <div class="wrap">
       <h2 id="features-title">สิ่งที่ FirmAlways Pro เพิ่มจาก Gate</h2>
       <div class="groups">
@@ -104,7 +104,7 @@
     </div>
   </section>
 
-  <section id="deploy" class="tinted" aria-labelledby="deploy-title">
+  <section id="deploy" data-glow="violet" aria-labelledby="deploy-title">
     <div class="wrap">
       <h2 id="deploy-title">ข้อมูลอยู่ในระบบของคุณ</h2>
       <div class="deploy">
@@ -118,7 +118,7 @@
     </div>
   </section>
 
-  <section id="plans" aria-labelledby="plans-title">
+  <section id="plans" data-glow="indigo" aria-labelledby="plans-title">
     <div class="wrap">
       <h2 id="plans-title">แพ็กเกจ FirmAlways Pro</h2>
       <p class="prose">ราคาขึ้นกับจำนวนผู้ใช้และรูปแบบการติดตั้ง ติดต่อเราเพื่อรับใบเสนอราคา</p>
@@ -138,11 +138,42 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>FirmAlways Pro</span>
-    <nav aria-label="ลิงก์ท้ายหน้า">
-      <a href="../">FirmAlways Gate (ฟรี)</a>
-      <a href="https://github.com/firmalways/gate">GitHub</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../"><img src="../assets/brand/logo-64.png" alt="" width="32" height="32">FirmAlways</a>
+        <p>ด่านกรองข้อมูลส่วนบุคคลภาษาไทยก่อนส่งให้ AI โอเพนซอร์ส ทำงานในระบบของคุณเอง และไม่ติดต่อเซิร์ฟเวอร์ของเรา</p>
+        <div class="actions">
+          <a class="button primary" href="../#install">ติดตั้ง Gate</a>
+          <a class="button" href="../pro/">ดู FirmAlways Pro</a>
+        </div>
+      </div>
+      <nav aria-labelledby="footer-col-0"><h2 class="footer-title" id="footer-col-0">ผลิตภัณฑ์</h2><ul class="footer-links">
+        <li><a href="../">FirmAlways Gate</a></li>
+        <li><a href="../pro/">FirmAlways Pro</a></li>
+        <li><a href="https://github.com/firmalways/gate/tree/main/extension">ส่วนขยายเบราว์เซอร์</a></li>
+        <li><a href="https://github.com/firmalways/gate/releases/latest">ดาวน์โหลดเวอร์ชันล่าสุด</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-1"><h2 class="footer-title" id="footer-col-1">เอกสาร</h2><ul class="footer-links">
+        <li><a href="../#install">วิธีติดตั้ง</a></li>
+        <li><a href="https://github.com/firmalways/gate#readme">คู่มือการใช้งาน</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/policy.example.toml">ตัวอย่างนโยบาย</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">ผลทดสอบ</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-2"><h2 class="footer-title" id="footer-col-2">ความปลอดภัยและกฎหมาย</h2><ul class="footer-links">
+        <li><a href="../#law">PDPA และ ISO</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">แจ้งช่องโหว่</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/LICENSE">สัญญาอนุญาต Apache-2.0</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-3"><h2 class="footer-title" id="footer-col-3">ชุมชน</h2><ul class="footer-links">
+        <li><a href="https://github.com/firmalways">GitHub</a></li>
+        <li><a href="https://github.com/firmalways/gate/discussions/new?category=pro">ขอทดลองใช้ Pro</a></li>
+        <li><a href="https://github.com/firmalways/gate/issues">รายงานปัญหา</a></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FirmAlways. FirmAlways Gate เผยแพร่ภายใต้ Apache-2.0</span>
+      <span><a href="../en/pro/" hreflang="en" lang="en">English</a></span>
+    </div>
   </div>
 </footer>
 </body>

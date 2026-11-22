@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/ibm-plex-sans-thai-700-thai.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="stylesheet" href="assets/style.css?v=5">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Gate">
@@ -32,53 +32,50 @@
   <meta name="twitter:description" content="ซ่อนข้อมูลส่วนบุคคลภาษาไทยก่อนส่งข้อความให้ AI ตาม PDPA ฟรีและโอเพนซอร์ส">
   <meta name="twitter:image" content="https://firmalways.meapplication.co.th/assets/brand/og-image.png">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://firmalways.meapplication.co.th/#org",
-        "name": "FirmAlways",
-        "url": "https://firmalways.meapplication.co.th/",
-        "logo": "https://firmalways.meapplication.co.th/assets/brand/icon-512.png",
-        "sameAs": ["https://github.com/firmalways"]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://firmalways.meapplication.co.th/#website",
-        "url": "https://firmalways.meapplication.co.th/",
-        "name": "FirmAlways Gate",
-        "inLanguage": "th",
-        "publisher": { "@id": "https://firmalways.meapplication.co.th/#org" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "FirmAlways Gate",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": "macOS, Linux, Windows",
-        "softwareVersion": "0.2.0",
-        "description": "ด่านกรองข้อมูลส่วนบุคคลภาษาไทยแบบโอเพนซอร์ส ซ่อนข้อมูลก่อนส่งให้ AI และคืนค่าจริงในคำตอบ",
-        "url": "https://firmalways.meapplication.co.th/",
-        "downloadUrl": "https://github.com/firmalways/gate/releases/latest",
-        "license": "https://www.apache.org/licenses/LICENSE-2.0",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "THB" },
-        "publisher": { "@id": "https://firmalways.meapplication.co.th/#org" }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "ใช้แล้วองค์กรผ่าน PDPA เลยไหม",
-            "acceptedAnswer": { "@type": "Answer", "text": "ไม่ Gate ช่วยลดความเสี่ยงและช่วยงานด้าน PDPA แต่การปฏิบัติตามกฎหมายยังต้องมีนโยบาย ความยินยอม สัญญากับผู้ประมวลผล และบันทึก ROPA" } },
-          { "@type": "Question", "name": "ตรวจจับได้ครบ 100% ไหม",
-            "acceptedAnswer": { "@type": "Answer", "text": "ไม่มีเครื่องมือไหนทำได้ เราเปิดเผยผลทดสอบและข้อจำกัดไว้ใน GitHub และถ้าพบช่องโหว่ แจ้งได้ตาม SECURITY.md" } },
-          { "@type": "Question", "name": "ซ่อนชื่อแล้ว AI ยังรู้อะไรได้บ้าง",
-            "acceptedAnswer": { "@type": "Answer", "text": "บริบทในประโยคยังอยู่ เช่น ความลับทางธุรกิจที่ไม่ได้เป็นข้อมูลส่วนบุคคล ถ้าข้อมูลลับมาก ใช้โมเดลในเครื่องเป็นปลายทางได้" } },
-          { "@type": "Question", "name": "ใช้ฟรีได้ถึงเมื่อไหร่",
-            "acceptedAnswer": { "@type": "Answer", "text": "ตลอดไป Gate เป็น Apache-2.0 ใช้ในเชิงพาณิชย์ได้ ส่วน FirmAlways Pro เป็นส่วนเสริมสำหรับองค์กรที่ต้องการนโยบายแยกแผนกและรายงานสำหรับ DPO" } }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://firmalways.meapplication.co.th/#org",
+      "name": "FirmAlways",
+      "url": "https://firmalways.meapplication.co.th/",
+      "logo": "https://firmalways.meapplication.co.th/assets/brand/icon-512.png",
+      "sameAs": [
+        "https://github.com/firmalways"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://firmalways.meapplication.co.th/#website",
+      "url": "https://firmalways.meapplication.co.th/",
+      "name": "FirmAlways Gate",
+      "inLanguage": "th",
+      "publisher": {
+        "@id": "https://firmalways.meapplication.co.th/#org"
       }
-    ]
-  }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "FirmAlways Gate",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "macOS, Linux, Windows",
+      "softwareVersion": "0.2.0",
+      "description": "ด่านกรองข้อมูลส่วนบุคคลภาษาไทยแบบโอเพนซอร์ส ซ่อนข้อมูลก่อนส่งให้ AI และคืนค่าจริงในคำตอบ",
+      "url": "https://firmalways.meapplication.co.th/",
+      "downloadUrl": "https://github.com/firmalways/gate/releases/latest",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "THB"
+      },
+      "publisher": {
+        "@id": "https://firmalways.meapplication.co.th/#org"
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -120,7 +117,7 @@
         <div class="demo-pane">
           <label for="demo-input">สิ่งที่คุณพิมพ์ (แก้ข้อความได้)</label>
           <textarea id="demo-input" spellcheck="false">ช่วยร่างอีเมลถึงนางสาวสมศรี รักไทย เลขบัตร 1-1017-00203-61-1 วันเกิด 12 มีนาคม 2530 โทร 081-234-5678 ส่งสำเนาให้ somsri@example.co.th
-ที่อยู่ ธันยาคารคอนโดมิเนียม 50/38 ซอยลาดพร้าว 38 ถนนลาดพร้าว แขวงสามเสนนอก เขตห้วยขวาง กรุงเทพมหานคร 10310</textarea>
+ที่อยู่ ถนนลาดพร้าว แขวงสามเสนนอก เขตห้วยขวาง กรุงเทพมหานคร 10310</textarea>
         </div>
         <div class="demo-pane">
           <span class="demo-title" id="demo-output-label">สิ่งที่ AI ได้รับ</span>
@@ -132,7 +129,7 @@
     </div>
   </section>
 
-  <section id="detect" class="alt" aria-labelledby="detect-title">
+  <section id="detect" data-glow="sky" aria-labelledby="detect-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="detect-title">ข้อมูลส่วนบุคคลที่ Gate ตรวจจับได้</h2>
@@ -160,7 +157,7 @@
     </div>
   </section>
 
-  <section id="flow" aria-labelledby="flow-title">
+  <section id="flow" data-glow="indigo" aria-labelledby="flow-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="flow-title">ขั้นตอนการทำงานของ FirmAlways Gate</h2>
@@ -179,7 +176,7 @@
     </div>
   </section>
 
-  <section id="risks" class="alt" aria-labelledby="risks-title">
+  <section id="risks" data-glow="rose" aria-labelledby="risks-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="risks-title">ถ้าข้อมูลหลุดไปถึงมือมิจฉาชีพ จะเกิดอะไรขึ้น</h2>
@@ -214,7 +211,7 @@
     </div>
   </section>
 
-  <section id="law" aria-labelledby="law-title">
+  <section id="law" data-glow="violet" aria-labelledby="law-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="law-title">ทำไมองค์กรต้องใส่ใจ: กฎหมายบังคับ และอันตรายจริง</h2>
@@ -282,7 +279,7 @@
     </div>
   </section>
 
-  <section id="install" class="install alt" aria-labelledby="install-title">
+  <section id="install" class="install" data-glow="indigo" aria-labelledby="install-title">
     <div class="wrap prose">
       <h2 id="install-title">ติดตั้ง FirmAlways Gate</h2>
       <p class="muted">ต้องมี Python 3.11 ขึ้นไป หรือ Docker</p>
@@ -302,7 +299,7 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="benchmark" aria-labelledby="benchmark-title">
+  <section id="benchmark" data-glow="sky" aria-labelledby="benchmark-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="benchmark-title">ผลทดสอบกับข้อความภาษาไทย</h2>
@@ -323,7 +320,7 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="supports" class="alt" aria-labelledby="supports-title">
+  <section id="supports" data-glow="violet" aria-labelledby="supports-title">
     <div class="wrap">
       <div class="section-head"><h2 id="supports-title">สิ่งที่ FirmAlways Gate รองรับ</h2></div>
       <ul class="checks">
@@ -336,30 +333,48 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="faq" aria-labelledby="faq-title">
-    <div class="wrap">
-      <div class="section-head"><h2 id="faq-title">คำถามที่พบบ่อย</h2></div>
-      <div class="faq">
-        <details><summary><h3>ใช้แล้วองค์กรผ่าน PDPA เลยไหม</h3></summary><p>ไม่ Gate ช่วยลดความเสี่ยงและช่วยงานด้าน PDPA แต่การปฏิบัติตามกฎหมายยังต้องมีนโยบาย ความยินยอม สัญญากับผู้ประมวลผล และบันทึก ROPA</p></details>
-        <details><summary><h3>ตรวจจับได้ครบ 100% ไหม</h3></summary><p>ไม่มีเครื่องมือไหนทำได้ เราเปิดเผยผลทดสอบและข้อจำกัดไว้ใน GitHub และถ้าพบช่องโหว่ แจ้งได้ตาม SECURITY.md</p></details>
-        <details><summary><h3>ซ่อนชื่อแล้ว AI ยังรู้อะไรได้บ้าง</h3></summary><p>บริบทในประโยคยังอยู่ เช่น ความลับทางธุรกิจที่ไม่ได้เป็นข้อมูลส่วนบุคคล ถ้าข้อมูลลับมาก ใช้โมเดลในเครื่องเป็นปลายทางได้</p></details>
-        <details><summary><h3>ใช้ฟรีได้ถึงเมื่อไหร่</h3></summary><p>ตลอดไป Gate เป็น Apache-2.0 ใช้ในเชิงพาณิชย์ได้ ส่วน <a href="pro/">FirmAlways Pro</a> เป็นส่วนเสริมสำหรับองค์กรที่ต้องการนโยบายแยกแผนกและรายงานสำหรับ DPO</p></details>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>FirmAlways Gate, Apache-2.0</span>
-    <nav aria-label="ลิงก์ท้ายหน้า">
-      <a href="pro/">FirmAlways Pro</a>
-      <a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">แจ้งช่องโหว่</a>
-      <a href="https://github.com/firmalways/gate">GitHub</a>
-      <a href="en/" hreflang="en" lang="en">English</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href=""><img src="assets/brand/logo-64.png" alt="" width="32" height="32">FirmAlways</a>
+        <p>ด่านกรองข้อมูลส่วนบุคคลภาษาไทยก่อนส่งให้ AI โอเพนซอร์ส ทำงานในระบบของคุณเอง และไม่ติดต่อเซิร์ฟเวอร์ของเรา</p>
+        <div class="actions">
+          <a class="button primary" href="#install">ติดตั้ง Gate</a>
+          <a class="button" href="pro/">ดู FirmAlways Pro</a>
+        </div>
+      </div>
+      <nav aria-labelledby="footer-col-0"><h2 class="footer-title" id="footer-col-0">ผลิตภัณฑ์</h2><ul class="footer-links">
+        <li><a href="">FirmAlways Gate</a></li>
+        <li><a href="pro/">FirmAlways Pro</a></li>
+        <li><a href="https://github.com/firmalways/gate/tree/main/extension">ส่วนขยายเบราว์เซอร์</a></li>
+        <li><a href="https://github.com/firmalways/gate/releases/latest">ดาวน์โหลดเวอร์ชันล่าสุด</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-1"><h2 class="footer-title" id="footer-col-1">เอกสาร</h2><ul class="footer-links">
+        <li><a href="#install">วิธีติดตั้ง</a></li>
+        <li><a href="https://github.com/firmalways/gate#readme">คู่มือการใช้งาน</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/policy.example.toml">ตัวอย่างนโยบาย</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">ผลทดสอบ</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-2"><h2 class="footer-title" id="footer-col-2">ความปลอดภัยและกฎหมาย</h2><ul class="footer-links">
+        <li><a href="#law">PDPA และ ISO</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">แจ้งช่องโหว่</a></li>
+        <li><a href="https://github.com/firmalways/gate/blob/main/LICENSE">สัญญาอนุญาต Apache-2.0</a></li>
+      </ul></nav>
+      <nav aria-labelledby="footer-col-3"><h2 class="footer-title" id="footer-col-3">ชุมชน</h2><ul class="footer-links">
+        <li><a href="https://github.com/firmalways">GitHub</a></li>
+        <li><a href="https://github.com/firmalways/gate/discussions/new?category=pro">ขอทดลองใช้ Pro</a></li>
+        <li><a href="https://github.com/firmalways/gate/issues">รายงานปัญหา</a></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FirmAlways. FirmAlways Gate เผยแพร่ภายใต้ Apache-2.0</span>
+      <span><a href="en/" hreflang="en" lang="en">English</a></span>
+    </div>
   </div>
 </footer>
-<script src="assets/demo.js?v=4" defer></script>
+<script src="assets/demo.js?v=5" defer></script>
 </body>
 </html>
