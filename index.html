@@ -95,6 +95,8 @@
       <h3>สคริปต์ติดตั้ง</h3>
       <pre><code>curl -fsSL https://firmalways.meapplication.co.th/install.sh | sh</code></pre>
       <p>สคริปต์ติดตั้งเวอร์ชันล่าสุดด้วย uv, pipx หรือ pip <a href="install.sh">อ่านสคริปต์ก่อนรัน</a></p>
+      <p>หรือดาวน์โหลดสคริปต์เดียวกันจาก GitHub release</p>
+      <pre><code>curl -fsSL https://github.com/firmalways/gate/releases/latest/download/install.sh | sh</code></pre>
       <h3>Docker</h3>
       <pre><code>docker run --rm -p 8787:8787 -e FIRMALWAYS_GATE_API_KEY=change-me \
   -v "$PWD/policy.toml:/etc/firmalways/policy.toml:ro" ghcr.io/firmalways/gate</code></pre>
