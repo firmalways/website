@@ -7,6 +7,18 @@
   var status = document.getElementById("demo-status");
   if (!input || !output) return;
 
+  var TEXT = {
+    th: {
+      blocked: "ข้อความนี้จะไม่ถูกส่งให้ AI เพราะมีรหัสผ่านหรือ API key",
+      masked: function (n) { return "ซ่อนข้อมูลส่วนบุคคล " + n + " จุด แล้วใส่ค่าจริงคืนในคำตอบให้คุณ"; },
+      none: "ไม่พบข้อมูลส่วนบุคคล ส่งต่อได้ตามเดิม",
+    },
+    en: {
+      blocked: "This text would not be sent to the AI because it contains a password or API key.",
+      masked: function (n) { return "Masked " + n + " personal data item" + (n === 1 ? "" : "s") + "; the real values come back in your answer."; },
+      none: "No personal data found; the text is sent as is.",
+    },
+  };
   var T = "[ก-ฺเ-๎]";
   function validId(raw) {
     var d = raw.replace(/\D/g, "");
@@ -69,13 +81,14 @@
     shown = {};
     Object.keys(tokens).forEach(function (k) { shown[tokens[k]] = true; });
     var masked = entities.length - blocked.length;
+    var t = TEXT[document.documentElement.lang] || TEXT.th;
     if (blocked.length) {
       status.className = "demo-status blocked";
-      status.textContent = "ข้อความนี้จะไม่ถูกส่งให้ AI เพราะมีรหัสผ่านหรือ API key";
+      status.textContent = t.blocked;
       output.textContent = "";
     } else {
       status.className = "demo-status";
-      status.textContent = masked ? "ซ่อนข้อมูลส่วนบุคคล " + masked + " จุด แล้วใส่ค่าจริงคืนในคำตอบให้คุณ" : "ไม่พบข้อมูลส่วนบุคคล ส่งต่อได้ตามเดิม";
+      status.textContent = masked ? t.masked(masked) : t.none;
     }
   }
   input.addEventListener("input", render);

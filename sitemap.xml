@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://firmalways.meapplication.co.th/</loc><lastmod>2026-11-22</lastmod><priority>1.0</priority></url>
-  <url><loc>https://firmalways.meapplication.co.th/pro/</loc><lastmod>2026-11-22</lastmod><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://firmalways.meapplication.co.th/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://firmalways.meapplication.co.th/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://firmalways.meapplication.co.th/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://firmalways.meapplication.co.th/"/>
+  </url>
+  <url>
+    <loc>https://firmalways.meapplication.co.th/en/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://firmalways.meapplication.co.th/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://firmalways.meapplication.co.th/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://firmalways.meapplication.co.th/"/>
+  </url>
+  <url>
+    <loc>https://firmalways.meapplication.co.th/pro/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://firmalways.meapplication.co.th/pro/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://firmalways.meapplication.co.th/en/pro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://firmalways.meapplication.co.th/pro/"/>
+  </url>
+  <url>
+    <loc>https://firmalways.meapplication.co.th/en/pro/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://firmalways.meapplication.co.th/pro/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://firmalways.meapplication.co.th/en/pro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://firmalways.meapplication.co.th/pro/"/>
+  </url>
 </urlset>

@@ -6,13 +6,16 @@
   <title>FirmAlways Gate</title>
   <meta name="description" content="ซ่อนเลขบัตรประชาชน ชื่อ เบอร์โทร และข้อมูลอ่อนไหวตาม PDPA ก่อนส่งข้อความให้ ChatGPT, Claude หรือ Gemini แล้วคืนค่าจริงในคำตอบ ฟรีและโอเพนซอร์ส">
   <link rel="canonical" href="https://firmalways.meapplication.co.th/">
+  <link rel="alternate" hreflang="th" href="https://firmalways.meapplication.co.th/">
+  <link rel="alternate" hreflang="en" href="https://firmalways.meapplication.co.th/en/">
+  <link rel="alternate" hreflang="x-default" href="https://firmalways.meapplication.co.th/">
   <meta name="theme-color" content="#6e3ca7">
   <link rel="icon" href="assets/brand/favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/ibm-plex-sans-thai-700-thai.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=3">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Gate">
@@ -23,6 +26,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="FirmAlways Gate ซ่อนข้อมูลส่วนบุคคลภาษาไทยก่อนส่งข้อความให้ AI ตาม PDPA">
   <meta property="og:locale" content="th_TH">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FirmAlways Gate">
   <meta name="twitter:description" content="ซ่อนข้อมูลส่วนบุคคลภาษาไทยก่อนส่งข้อความให้ AI ตาม PDPA ฟรีและโอเพนซอร์ส">
@@ -89,6 +93,7 @@
       <a href="#benchmark">ผลทดสอบ</a>
       <a href="pro/">Pro</a>
       <a href="https://github.com/firmalways/gate">GitHub</a>
+      <a class="lang" href="en/" hreflang="en" lang="en" title="English">EN</a>
     </nav>
   </div>
 </header>
@@ -203,7 +208,7 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
 
   <section id="promises" aria-labelledby="promises-title">
     <div class="wrap">
-      <h2 id="promises-title">สิ่งที่ FirmAlways Gate สัญญา</h2>
+      <h2 id="promises-title">สิ่งที่ FirmAlways Gate รองรับ</h2>
       <ul class="promises">
         <li>ติดตั้งในเครื่องหรือ cloud ของคุณ Gate ไม่ติดต่อเซิร์ฟเวอร์ของเราเลย</li>
         <li>ถ้าตรวจข้อความไม่สำเร็จ จะไม่ส่งต่อ ไม่มีการปล่อยข้อมูลออกไปแบบไม่ได้ตรวจ</li>
@@ -235,6 +240,6 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </nav>
   </div>
 </footer>
-<script src="assets/demo.js" defer></script>
+<script src="assets/demo.js?v=3" defer></script>
 </body>
 </html>
