@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/ibm-plex-sans-thai-700-thai.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css?v=3">
+  <link rel="stylesheet" href="assets/style.css?v=4">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Gate">
@@ -85,12 +85,13 @@
 <a class="skip" href="#main">ข้ามไปที่เนื้อหา</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/brand/logo-64.png" alt="" width="36" height="36">FirmAlways Gate</a>
+    <a class="brand" href="./"><img src="assets/brand/logo-64.png" alt="" width="32" height="32">FirmAlways Gate</a>
     <nav class="nav" aria-label="เมนูหลัก">
-      <a href="#how">ทำงานอย่างไร</a>
       <a href="#detect">ข้อมูลที่ตรวจ</a>
+      <a href="#flow">ขั้นตอน</a>
+      <a href="#risks">ความเสี่ยง</a>
+      <a href="#law">กฎหมาย</a>
       <a href="#install">ติดตั้ง</a>
-      <a href="#benchmark">ผลทดสอบ</a>
       <a href="pro/">Pro</a>
       <a href="https://github.com/firmalways/gate">GitHub</a>
       <a class="lang" href="en/" hreflang="en" lang="en" title="English">EN</a>
@@ -103,21 +104,23 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
+          <p class="pill">โอเพนซอร์ส ใช้ฟรี ติดตั้งในระบบของคุณเอง</p>
           <h1 id="hero-title">ซ่อนข้อมูลส่วนบุคคลก่อนส่งให้ AI ด้วย FirmAlways Gate</h1>
-          <p class="lead">AI ได้คำถามของคุณ แต่ไม่ได้ข้อมูลลูกค้าของคุณ Gate ซ่อนเลขบัตรประชาชน ชื่อ เบอร์โทร เลขบัญชี และข้อมูลอ่อนไหวตาม PDPA ก่อนข้อความออกจากองค์กร แล้วใส่ค่าจริงคืนในคำตอบให้คุณ ฟรีและเปิดโค้ดให้ตรวจสอบทุกบรรทัด</p>
+          <p class="lead">AI ได้คำถามของคุณ แต่ไม่ได้ข้อมูลลูกค้าของคุณ Gate ซ่อนเลขบัตรประชาชน ชื่อ ที่อยู่ วันเกิด เบอร์โทร เลขบัญชี และข้อมูลอ่อนไหวตาม PDPA ก่อนข้อความออกจากองค์กร แล้วใส่ค่าจริงคืนในคำตอบให้คุณ</p>
           <div class="actions">
             <a class="button primary" href="#install">ติดตั้ง Gate</a>
             <a class="button" href="https://github.com/firmalways/gate">ดูโค้ดบน GitHub</a>
           </div>
         </div>
-        <img src="assets/brand/logo-256.png" alt="มาสคอต FirmAlways ผู้เฝ้าประตูข้อมูล สวมหมวกสีม่วง" width="280" height="280" fetchpriority="high">
+        <img src="assets/brand/logo-256.png" alt="มาสคอต FirmAlways ผู้เฝ้าประตูข้อมูล" width="260" height="260" fetchpriority="high">
       </div>
 
       <h2 class="demo-heading">ลองดูว่า AI จะได้รับอะไร</h2>
       <div class="demo">
         <div class="demo-pane">
           <label for="demo-input">สิ่งที่คุณพิมพ์ (แก้ข้อความได้)</label>
-          <textarea id="demo-input" spellcheck="false">ช่วยร่างอีเมลถึงนางสาวสมศรี รักไทย เลขบัตร 1-1017-00203-61-1 โทร 081-234-5678 เรื่องยอดค้างชำระ แล้วส่งสำเนาให้ somsri@example.co.th</textarea>
+          <textarea id="demo-input" spellcheck="false">ช่วยร่างอีเมลถึงนางสาวสมศรี รักไทย เลขบัตร 1-1017-00203-61-1 วันเกิด 12 มีนาคม 2530 โทร 081-234-5678 ส่งสำเนาให้ somsri@example.co.th
+ที่อยู่ ธันยาคารคอนโดมิเนียม 50/38 ซอยลาดพร้าว 38 ถนนลาดพร้าว แขวงสามเสนนอก เขตห้วยขวาง กรุงเทพมหานคร 10310</textarea>
         </div>
         <div class="demo-pane">
           <span class="demo-title" id="demo-output-label">สิ่งที่ AI ได้รับ</span>
@@ -125,52 +128,164 @@
         </div>
         <p class="demo-status" id="demo-status" role="status"></p>
       </div>
-      <p class="demo-note">ตัวอย่างนี้ทำงานในเบราว์เซอร์ของคุณเท่านั้น ไม่ส่งข้อความไปที่ใด และใช้กฎเพียงบางส่วนของ Gate ตัวจริง</p>
+      <p class="demo-note">ตัวอย่างนี้ทำงานในเบราว์เซอร์ของคุณเท่านั้น ไม่ส่งข้อความไปที่ใด และใช้กฎชุดหลักชุดเดียวกับ Gate ลองพิมพ์ "เป็นเบาหวาน" หรือ "password: 1234abcd" เพื่อดูการบล็อก</p>
     </div>
   </section>
 
-  <section id="how" aria-labelledby="how-title">
+  <section id="detect" class="alt" aria-labelledby="detect-title">
     <div class="wrap">
-      <h2 id="how-title">FirmAlways Gate ทำงานอย่างไร</h2>
-      <p class="prose">Gate ตั้งอยู่ระหว่างแอปของคุณกับผู้ให้บริการ AI ใช้ได้กับทุกเครื่องมือที่ต่อ OpenAI API ได้ แค่เปลี่ยน <code>base_url</code></p>
-      <ol class="steps">
-        <li><h3>ตรวจข้อความและไฟล์</h3><p>หาข้อมูลส่วนบุคคลภาษาไทย ด้วยกฎที่รู้จักรูปแบบไทย เช่น checksum ของเลขบัตร และชื่อที่เขียนติดกันโดยไม่เว้นวรรค</p></li>
-        <li><h3>ซ่อนหรือบล็อก</h3><p>แทนค่าจริงด้วย <span class="tok">«PERSON_1»</span> ก่อนส่งออก และไม่ส่งเลยถ้าพบรหัสผ่าน API key หรือข้อมูลอ่อนไหวตามมาตรา 26</p></li>
-        <li><h3>คืนค่าในคำตอบ</h3><p>เมื่อ AI ตอบกลับ Gate ใส่ค่าจริงคืนในเครื่องของคุณ และซ่อนข้อมูลใหม่ที่ AI อาจตอบออกมาเอง</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="detect" class="tinted" aria-labelledby="detect-title">
-    <div class="wrap">
-      <h2 id="detect-title">ข้อมูลส่วนบุคคลที่ Gate ตรวจจับได้</h2>
-      <div class="groups">
-        <div class="group">
-          <h3>ข้อมูลระบุตัวบุคคล</h3>
-          <div class="item"><h4>เลขบัตรประชาชน</h4><p>13 หลัก ตรวจ checksum ทั้งเลขอารบิกและเลขไทย ทุกรูปแบบการเว้นวรรค</p></div>
-          <div class="item"><h4>ชื่อบุคคล</h4><p>ชื่อที่มีคำนำหน้า เช่น นาย นางสาว คุณ ด.ช. และชื่อไม่มีคำนำหน้าเมื่อเปิด Thai NER</p></div>
-          <div class="item"><h4>เบอร์โทร อีเมล และ LINE ID</h4><p>มือถือ เบอร์บ้าน +66 และกรณีที่เขียนติดกับข้อความภาษาไทย</p></div>
-          <div class="item"><h4>ที่อยู่</h4><p>บ้านเลขที่ หมู่ ซอย ถนน ตำบล อำเภอ จังหวัด และรหัสไปรษณีย์</p></div>
-        </div>
-        <div class="group">
-          <h3>ข้อมูลการเงิน เอกสาร และระบบ</h3>
-          <div class="item"><h4>เลขบัญชีและบัตรเครดิต</h4><p>เลขบัญชีธนาคารไทย และเลขบัตรที่ผ่าน Luhn</p></div>
-          <div class="item"><h4>หนังสือเดินทางและทะเบียนรถ</h4><p>เลขหนังสือเดินทาง ทะเบียนรถ และเลขผู้เสียภาษีของนิติบุคคล</p></div>
-          <div class="item"><h4>รหัสลับและ IP address</h4><p>API key, token, private key และรหัสผ่าน บล็อกโดยค่าเริ่มต้น</p></div>
-          <div class="item"><h4>ไฟล์แนบ</h4><p>อ่านข้อความจาก txt, csv, docx และ pdf แล้วซ่อนก่อนส่ง</p></div>
-        </div>
-        <div class="group s26">
-          <h3>ข้อมูลอ่อนไหวตาม PDPA มาตรา 26</h3>
-          <p>สุขภาพ ศาสนา ประวัติอาชญากรรม ความพิการ ข้อมูลชีวภาพ พันธุกรรม ความคิดเห็นทางการเมือง สหภาพแรงงาน พฤติกรรมทางเพศ และเชื้อชาติ Gate บล็อกเมื่อข้อมูลเหล่านี้อยู่คู่กับตัวบุคคล ส่วนคำถามทั่วไปอย่าง "อาการเบาหวานมีอะไรบ้าง" ยังถามได้ตามปกติ</p>
-        </div>
+      <div class="section-head">
+        <h2 id="detect-title">ข้อมูลส่วนบุคคลที่ Gate ตรวจจับได้</h2>
+        <p class="lead">รู้จักรูปแบบข้อมูลไทยที่เครื่องมือต่างประเทศมักพลาด เช่น checksum ของเลขบัตร ชื่อที่เขียนติดกัน และที่อยู่ที่มีชื่ออาคาร</p>
+      </div>
+      <h3 class="group-title">ข้อมูลระบุตัวบุคคลและข้อมูลตามบัตรประชาชน</h3>
+      <div class="grid cols-3">
+        <div class="card"><h4>เลขบัตรประชาชน</h4><p>13 หลัก ตรวจ checksum ทั้งเลขอารบิกและเลขไทย ทุกรูปแบบการเว้นวรรค</p></div>
+        <div class="card"><h4>ชื่อบุคคล</h4><p>ชื่อที่มีคำนำหน้า เช่น นาย นางสาว คุณ ด.ช. และชื่อไม่มีคำนำหน้าเมื่อเปิด Thai NER</p></div>
+        <div class="card"><h4>ที่อยู่เต็ม</h4><p>ชื่อคอนโดหรืออาคาร บ้านเลขที่ เช่น 50/38 หมู่ ซอย ถนน ตำบล อำเภอ จังหวัด และรหัสไปรษณีย์</p></div>
+        <div class="card"><h4>วันเกิดและสัญชาติ</h4><p>วันเกิดทั้งแบบตัวเลขและชื่อเดือนไทยหรืออังกฤษ และสัญชาติเมื่ออยู่คู่กับตัวบุคคล</p></div>
+        <div class="card"><h4>เบอร์โทร อีเมล และ LINE ID</h4><p>มือถือ เบอร์บ้าน +66 และกรณีที่เขียนติดกับข้อความภาษาไทย</p></div>
+        <div class="card"><h4>หนังสือเดินทางและทะเบียนรถ</h4><p>เลขหนังสือเดินทาง ทะเบียนรถ และเลขผู้เสียภาษีของนิติบุคคล</p></div>
+      </div>
+      <h3 class="group-title">ข้อมูลการเงินและข้อมูลในระบบ</h3>
+      <div class="grid cols-3">
+        <div class="card"><h4>เลขบัญชีและบัตรเครดิต</h4><p>เลขบัญชีธนาคารไทย และเลขบัตรที่ผ่านการตรวจ Luhn</p></div>
+        <div class="card"><h4>รหัสลับและ IP address</h4><p>API key, token, private key และรหัสผ่าน บล็อกโดยค่าเริ่มต้น</p></div>
+        <div class="card"><h4>ไฟล์แนบ</h4><p>อ่านข้อความจาก txt, csv, docx และ pdf แล้วซ่อนข้อมูลก่อนส่ง</p></div>
+      </div>
+      <div class="callout">
+        <h3>ข้อมูลอ่อนไหวตาม PDPA มาตรา 26 ถูกบล็อก</h3>
+        <p>สุขภาพ กรุ๊ปเลือด ศาสนา ประวัติอาชญากรรม ความพิการ ข้อมูลชีวภาพ พันธุกรรม ความคิดเห็นทางการเมือง สหภาพแรงงาน พฤติกรรมทางเพศ และเชื้อชาติ เมื่ออยู่คู่กับตัวบุคคล Gate จะไม่ส่งข้อความนั้นออกไปเลย <a href="#law">ดูเหตุผลทางกฎหมาย</a></p>
       </div>
     </div>
   </section>
 
-  <section id="install" class="install" aria-labelledby="install-title">
+  <section id="flow" aria-labelledby="flow-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="flow-title">ขั้นตอนการทำงานของ FirmAlways Gate</h2>
+        <p class="lead">Gate ตั้งอยู่ระหว่างแอปของพนักงานกับผู้ให้บริการ AI ใช้ได้กับทุกเครื่องมือที่ต่อ OpenAI API ได้ แค่เปลี่ยน <code>base_url</code></p>
+      </div>
+      <ol class="flow" aria-label="ลำดับการทำงาน">
+        <li><div class="node"><span class="step">1</span><h3>พนักงานพิมพ์หรือแนบไฟล์</h3><p>ผ่านแอปที่ใช้อยู่ ส่วนขยายเบราว์เซอร์ หรือ API</p></div></li>
+        <li><div class="node"><span class="step">2</span><h3>Gate ตรวจข้อมูลไทย</h3><p>ตรวจในเครื่องหรือ cloud ของคุณ ไม่ส่งข้อความไปที่อื่น</p></div></li>
+        <li class="branch">
+          <div class="node red"><span class="step">3</span><h3>บล็อก</h3><p>พบรหัสผ่าน API key หรือข้อมูลมาตรา 26 คู่กับตัวบุคคล ข้อความไม่ถูกส่งออก</p></div>
+          <div class="node blue"><span class="step">3</span><h3>ซ่อน</h3><p>แทนค่าจริงด้วย <span class="tok">«PERSON_1»</span> แล้วส่งให้ AI</p></div>
+        </li>
+        <li><div class="node"><span class="step">4</span><h3>AI ตอบกลับ</h3><p>Gate ใส่ค่าจริงคืน และซ่อนข้อมูลใหม่ที่ AI อาจตอบออกมาเอง</p></div></li>
+        <li><div class="node"><span class="step">5</span><h3>ได้คำตอบที่สมบูรณ์</h3><p>audit log บันทึกแค่จำนวนและประเภทข้อมูล ไม่เก็บข้อความ</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="risks" class="alt" aria-labelledby="risks-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="risks-title">ถ้าข้อมูลหลุดไปถึงมือมิจฉาชีพ จะเกิดอะไรขึ้น</h2>
+        <p class="lead">ข้อความที่วางลงในแชต AI ส่วนตัวอาจถูกเก็บไว้นอกองค์กร หากรั่วไหลจากบัญชีที่ถูกแฮ็ก ระบบของผู้ให้บริการ หรือลิงก์แชร์บทสนทนา มิจฉาชีพจะไม่ต้องเดาอีกต่อไป เพราะมีข้อมูลจริงไว้สร้างความน่าเชื่อถือ</p>
+      </div>
+      <div class="grid cols-2">
+        <article class="card danger scenario">
+          <h3><span class="num">1</span>แอบอ้างเป็นลูกหรือญาติ</h3>
+          <ul class="badges"><li class="badge red">ชื่อ-นามสกุล</li><li class="badge red">ที่อยู่</li><li class="badge red">เบอร์โทร</li></ul>
+          <p>มิจฉาชีพโทรหาพ่อแม่ของลูกค้า เรียกชื่อจริงและบอกที่อยู่ได้ถูกต้อง อ้างว่าลูกเกิดอุบัติเหตุและต้องโอนค่ารักษาด่วน ข้อมูลจริงทำให้เหยื่อไม่ทันสงสัย</p>
+          <p class="result">ครอบครัวโอนเงินให้คนร้าย และมักตามคืนไม่ได้</p>
+        </article>
+        <article class="card danger scenario">
+          <h3><span class="num">2</span>แก๊งคอลเซ็นเตอร์แอบอ้างเป็นเจ้าหน้าที่</h3>
+          <ul class="badges"><li class="badge red">เลขบัตรประชาชน</li><li class="badge red">วันเกิด</li><li class="badge red">ที่อยู่ตามบัตร</li></ul>
+          <p>คนร้ายอ้างเป็นตำรวจหรือเจ้าหน้าที่รัฐ อ่านเลขบัตรและวันเกิดให้ฟังเพื่อยืนยันตัวตน แล้วบอกว่าบัญชีพัวพันคดีฟอกเงิน ต้องโอนเงินไปบัญชีเพื่อ "ตรวจสอบ"</p>
+          <p class="result">เหยื่อเชื่อเพราะคนร้ายรู้ข้อมูลที่ควรมีแค่หน่วยงานรัฐ</p>
+        </article>
+        <article class="card danger scenario">
+          <h3><span class="num">3</span>สวมรอยเปิดบัญชีหรือขอสินเชื่อ</h3>
+          <ul class="badges"><li class="badge red">เลขบัตรประชาชน</li><li class="badge red">วันเกิด</li><li class="badge red">สัญชาติ</li></ul>
+          <p>ข้อมูลตามบัตรถูกใช้ยืนยันตัวตนกับบริการที่ตรวจสอบหละหลวม เพื่อเปิดบัญชีม้า สมัครบริการ หรือขอสินเชื่อในชื่อเจ้าของข้อมูล</p>
+          <p class="result">หนี้และคดีตามมาที่เจ้าของข้อมูลซึ่งไม่รู้เรื่องเลย</p>
+        </article>
+        <article class="card danger scenario">
+          <h3><span class="num">4</span>ข่มขู่หรือเลือกปฏิบัติจากข้อมูลอ่อนไหว</h3>
+          <ul class="badges"><li class="badge red">ผลตรวจสุขภาพ</li><li class="badge red">กรุ๊ปเลือด</li><li class="badge red">ศาสนา</li></ul>
+          <p>ข้อมูลสุขภาพ โรคประจำตัว หรือประวัติคดีถูกใช้ขู่กรรโชก หรือทำให้ถูกปฏิเสธงานและประกัน</p>
+          <p class="result">ความเสียหายต่อชีวิตและชื่อเสียงแก้คืนไม่ได้</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="law" aria-labelledby="law-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="law-title">ทำไมองค์กรต้องใส่ใจ: กฎหมายบังคับ และอันตรายจริง</h2>
+        <p class="lead">ถ้าพนักงานคนหนึ่งวางข้อมูลลูกค้าลงในแชต AI แล้วข้อมูลหลุด ความรับผิดไม่ได้จบที่พนักงาน บริษัทในฐานะผู้ควบคุมข้อมูลส่วนบุคคลต้องรับผิดด้วย ทั้งทางแพ่ง ทางอาญา และค่าปรับทางปกครอง</p>
+      </div>
+
+      <div class="law-block">
+        <h3>ข้อมูลอ่อนไหวตาม PDPA มาตรา 26</h3>
+        <p class="muted prose">พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 กำหนดให้ข้อมูลกลุ่มนี้ต้องได้รับความยินยอมโดยชัดแจ้งก่อนเก็บ ใช้ หรือเปิดเผย เว้นแต่มีข้อยกเว้นตามกฎหมาย ส่วนข้อมูลตามบัตร เช่น ที่อยู่ วันเกิด และสัญชาติ เป็นข้อมูลส่วนบุคคลที่ใช้สวมรอยได้ง่าย Gate จึงซ่อนให้เช่นกัน</p>
+        <ul class="badges">
+          <li class="badge red">เชื้อชาติ เผ่าพันธุ์</li><li class="badge red">ความคิดเห็นทางการเมือง</li><li class="badge red">ศาสนาและความเชื่อ</li><li class="badge red">พฤติกรรมทางเพศ</li><li class="badge red">ประวัติอาชญากรรม</li><li class="badge red">ข้อมูลสุขภาพ</li><li class="badge red">ความพิการ</li><li class="badge red">สหภาพแรงงาน</li><li class="badge red">ข้อมูลพันธุกรรม</li><li class="badge red">ข้อมูลชีวภาพ</li>
+        </ul>
+      </div>
+
+      <div class="law-block">
+        <h3>หน้าที่ขององค์กรตามกฎหมาย</h3>
+        <div class="grid cols-3">
+          <div class="card"><h4>มาตรา 37(1)</h4><p>ต้องมีมาตรการรักษาความมั่นคงปลอดภัยที่เหมาะสม ป้องกันการสูญหาย การเข้าถึง ใช้ เปลี่ยนแปลง หรือเปิดเผยข้อมูลโดยมิชอบ</p></div>
+          <div class="card"><h4>มาตรา 37(4)</h4><p>เมื่อข้อมูลรั่วไหล ต้องแจ้งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) ภายใน 72 ชั่วโมง และแจ้งเจ้าของข้อมูลหากมีความเสี่ยงสูง</p></div>
+          <div class="card"><h4>มาตรา 40</h4><p>ผู้ประมวลผลข้อมูล เช่น ผู้ให้บริการ AI ต้องมีมาตรการรักษาความปลอดภัยและแจ้งเหตุต่อผู้ควบคุมข้อมูล องค์กรจึงต้องรู้ว่าส่งข้อมูลอะไรไปให้ใคร</p></div>
+        </div>
+      </div>
+
+      <div class="law-block">
+        <h3>บทลงโทษเมื่อข้อมูลหลุด</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">ประเภท</th><th scope="col">มาตรา</th><th scope="col">โทษ</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">ทางแพ่ง</th><td>77, 78</td><td>ชดใช้ค่าเสียหายที่เกิดขึ้นจริง แม้ไม่ได้จงใจหรือประมาทเลินเล่อ และศาลสั่งค่าสินไหมเชิงลงโทษเพิ่มได้ไม่เกิน 2 เท่า</td></tr>
+              <tr><th scope="row">ทางอาญา</th><td>79</td><td>ใช้หรือเปิดเผยข้อมูลอ่อนไหวโดยมิชอบ จำคุกไม่เกิน 6 เดือน หรือปรับไม่เกิน 500,000 บาท หากเพื่อแสวงหาประโยชน์ จำคุกไม่เกิน 1 ปี หรือปรับไม่เกิน 1,000,000 บาท</td></tr>
+              <tr><th scope="row">ผู้บริหาร</th><td>81</td><td>กรรมการหรือผู้บริหารที่สั่งการหรือละเลยจนเกิดความผิดของนิติบุคคล ต้องรับโทษด้วย</td></tr>
+              <tr><th scope="row">ทางปกครอง</th><td>82–84</td><td>ปรับสูงสุด 1, 3 และ 5 ล้านบาทตามประเภทความผิด เช่น ไม่จัดมาตรการรักษาความปลอดภัยหรือไม่แจ้งเหตุ (มาตรา 83) และละเมิดข้อมูลอ่อนไหว (มาตรา 84)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">โทษเหล่านี้ใช้จริงแล้ว ในปี 2567 สคส. เผยแพร่ว่าได้สั่งปรับบริษัทเอกชนรายหนึ่ง 7 ล้านบาท จากเหตุข้อมูลลูกค้ารั่วไหลและถูกนำไปใช้หลอกลวง</p>
+      </div>
+
+      <div class="law-block">
+        <h3>ถ้าพนักงานทำข้อมูลลูกค้าหลุด จะเกิดอะไรขึ้นกับบริษัท</h3>
+        <ol class="steps-list">
+          <li><strong>พนักงานต้องรับผิดชอบ</strong> ถูกสอบสวนทางวินัย และอาจถูกดำเนินคดีหากเปิดเผยข้อมูลโดยมิชอบ</li>
+          <li><strong>บริษัทต้องแจ้ง สคส. ภายใน 72 ชั่วโมง</strong> และต้องบอกได้ว่าข้อมูลอะไร ของใคร ถูกส่งไปที่ไหน ถ้าตอบไม่ได้ก็ประเมินความเสี่ยงไม่ได้</li>
+          <li><strong>ลูกค้าฟ้องเรียกค่าเสียหาย</strong> บริษัทต้องรับผิดแม้ไม่ได้ตั้งใจ และอาจเสียค่าสินไหมเชิงลงโทษเพิ่ม</li>
+          <li><strong>ถูกตรวจสอบและปรับ</strong> หากพบว่าไม่มีมาตรการป้องกัน ไม่มีการสำรองข้อมูล ไม่มีบันทึกการประมวลผล หรือไม่แจ้งเหตุ อาจถูกปรับทางปกครองหลายล้านบาท</li>
+          <li><strong>ความเชื่อมั่นหายไป</strong> ลูกค้าและคู่ค้าเลิกไว้ใจ ซึ่งมักแพงกว่าค่าปรับ</li>
+        </ol>
+      </div>
+
+      <div class="law-block">
+        <h3>มาตรฐานสากลที่เกี่ยวข้อง</h3>
+        <div class="grid cols-3">
+          <div class="card"><h4>ISO/IEC 27001:2022</h4><p>ระบบบริหารความมั่นคงปลอดภัยสารสนเทศ มาตรการ A.8.11 Data masking และ A.8.12 Data leakage prevention ตรงกับสิ่งที่ Gate ทำ รวมถึง A.5.34 การคุ้มครองข้อมูลส่วนบุคคล</p></div>
+          <div class="card"><h4>ISO/IEC 27701:2019</h4><p>ส่วนขยายด้านความเป็นส่วนตัวของ ISO 27001 กำหนดการจัดการข้อมูลส่วนบุคคลทั้งในฐานะผู้ควบคุมและผู้ประมวลผล</p></div>
+          <div class="card"><h4>ISO/IEC 42001:2023</h4><p>ระบบบริหารจัดการ AI กำหนดให้องค์กรควบคุมข้อมูลที่ใช้กับ AI และประเมินความเสี่ยงต่อบุคคล</p></div>
+        </div>
+        <div class="grid cols-3 spaced">
+          <div class="card safe"><h4>ซ่อนก่อนส่ง</h4><p>ลดโอกาสที่ข้อมูลลูกค้าจะออกนอกองค์กรตั้งแต่ต้นทาง</p></div>
+          <div class="card safe"><h4>บอกได้ภายใน 72 ชั่วโมง</h4><p>audit log บอกว่าข้อมูลประเภทใดถูกส่งไปผู้ให้บริการรายใดเมื่อไร โดยไม่เก็บเนื้อหา</p></div>
+          <div class="card safe"><h4>บล็อกข้อมูลมาตรา 26</h4><p>ข้อมูลอ่อนไหวคู่กับตัวบุคคลไม่ถูกส่งออกไปเลย</p></div>
+        </div>
+        <p class="disclaimer">สรุปเพื่อความเข้าใจ ไม่ใช่คำแนะนำทางกฎหมาย Gate ช่วยลดความเสี่ยงและเป็นหลักฐานประกอบมาตรการ แต่ไม่ได้ทำให้องค์กรผ่าน PDPA หรือได้รับการรับรอง ISO โดยอัตโนมัติ กรุณาตรวจสอบตัวบทและปรึกษาที่ปรึกษากฎหมาย</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="install alt" aria-labelledby="install-title">
     <div class="wrap prose">
       <h2 id="install-title">ติดตั้ง FirmAlways Gate</h2>
-      <p>ต้องมี Python 3.11 ขึ้นไป หรือ Docker</p>
+      <p class="muted">ต้องมี Python 3.11 ขึ้นไป หรือ Docker</p>
       <h3>สคริปต์ติดตั้ง</h3>
       <pre><code>curl -fsSL https://firmalways.meapplication.co.th/install.sh | sh</code></pre>
       <p>สคริปต์ติดตั้งเวอร์ชันล่าสุดด้วย uv, pipx หรือ pip <a href="install.sh">อ่านสคริปต์ก่อนรัน</a> หรือใช้สคริปต์เดียวกันจาก GitHub release</p>
@@ -187,29 +302,31 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="benchmark" class="tinted" aria-labelledby="benchmark-title">
+  <section id="benchmark" aria-labelledby="benchmark-title">
     <div class="wrap">
-      <h2 id="benchmark-title">ผลทดสอบกับข้อความภาษาไทย</h2>
-      <p class="prose">ชุดทดสอบ 50 ข้อความ 54 ค่าที่ติดป้ายไว้ เทียบกับ Microsoft Presidio ที่ตั้งค่าเริ่มต้นภาษาอังกฤษ ชุดทดสอบนี้ผู้พัฒนาเขียนเอง ยังไม่มีผู้ประเมินภายนอก <a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">วิธีทดสอบและข้อจำกัด</a></p>
+      <div class="section-head">
+        <h2 id="benchmark-title">ผลทดสอบกับข้อความภาษาไทย</h2>
+        <p class="lead">ชุดทดสอบ 54 ข้อความ 61 ค่าที่ติดป้ายไว้ เทียบกับ Microsoft Presidio ที่ตั้งค่าเริ่มต้นภาษาอังกฤษ ชุดทดสอบนี้ผู้พัฒนาเขียนเอง ยังไม่มีผู้ประเมินภายนอก <a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">วิธีทดสอบและข้อจำกัด</a></p>
+      </div>
       <div class="table-wrap">
         <table>
           <caption>สัดส่วนข้อมูลที่ตรวจพบ ยิ่งสูงยิ่งดี</caption>
           <thead><tr><th scope="col">ตัวชี้วัด</th><th scope="col" class="num">FirmAlways Gate</th><th scope="col" class="num">Gate + Thai NER</th><th scope="col" class="num">Presidio (ค่าเริ่มต้น)</th></tr></thead>
           <tbody>
-            <tr><th scope="row">พบค่าที่ต้องซ่อน</th><td class="num win">94.4%</td><td class="num win">98.2%</td><td class="num lose">53.7%</td></tr>
-            <tr><th scope="row">ความแม่นยำ</th><td class="num win">100%</td><td class="num">98.2%</td><td class="num lose">74.1%</td></tr>
+            <tr><th scope="row">พบค่าที่ต้องซ่อน</th><td class="num win">95.1%</td><td class="num win">98.4%</td><td class="num lose">49.2%</td></tr>
+            <tr><th scope="row">ความแม่นยำ</th><td class="num win">100%</td><td class="num">98.4%</td><td class="num lose">74.6%</td></tr>
             <tr><th scope="row">เลขบัตรประชาชน</th><td class="num win">100%</td><td class="num win">100%</td><td class="num lose">0%</td></tr>
-            <tr><th scope="row">ข้อมูลสุขภาพ (ม.26)</th><td class="num win">100%</td><td class="num win">100%</td><td class="num lose">33%</td></tr>
+            <tr><th scope="row">วันเกิด</th><td class="num win">100%</td><td class="num win">100%</td><td class="num lose">0%</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <section id="promises" aria-labelledby="promises-title">
+  <section id="supports" class="alt" aria-labelledby="supports-title">
     <div class="wrap">
-      <h2 id="promises-title">สิ่งที่ FirmAlways Gate รองรับ</h2>
-      <ul class="promises">
+      <div class="section-head"><h2 id="supports-title">สิ่งที่ FirmAlways Gate รองรับ</h2></div>
+      <ul class="checks">
         <li>ติดตั้งในเครื่องหรือ cloud ของคุณ Gate ไม่ติดต่อเซิร์ฟเวอร์ของเราเลย</li>
         <li>ถ้าตรวจข้อความไม่สำเร็จ จะไม่ส่งต่อ ไม่มีการปล่อยข้อมูลออกไปแบบไม่ได้ตรวจ</li>
         <li>บันทึก audit เฉพาะจำนวนและประเภทข้อมูล ไม่บันทึกข้อความ คำตอบ หรือค่าจริง</li>
@@ -219,13 +336,15 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="faq" class="tinted" aria-labelledby="faq-title">
+  <section id="faq" aria-labelledby="faq-title">
     <div class="wrap">
-      <h2 id="faq-title">คำถามที่พบบ่อย</h2>
-      <details><summary><h3>ใช้แล้วองค์กรผ่าน PDPA เลยไหม</h3></summary><p>ไม่ Gate ช่วยลดความเสี่ยงและช่วยงานด้าน PDPA แต่การปฏิบัติตามกฎหมายยังต้องมีนโยบาย ความยินยอม สัญญากับผู้ประมวลผล และบันทึก ROPA</p></details>
-      <details><summary><h3>ตรวจจับได้ครบ 100% ไหม</h3></summary><p>ไม่มีเครื่องมือไหนทำได้ เราเปิดเผยผลทดสอบและข้อจำกัดไว้ใน GitHub และถ้าพบช่องโหว่ แจ้งได้ตาม SECURITY.md</p></details>
-      <details><summary><h3>ซ่อนชื่อแล้ว AI ยังรู้อะไรได้บ้าง</h3></summary><p>บริบทในประโยคยังอยู่ เช่น ความลับทางธุรกิจที่ไม่ได้เป็นข้อมูลส่วนบุคคล ถ้าข้อมูลลับมาก ใช้โมเดลในเครื่องเป็นปลายทางได้</p></details>
-      <details><summary><h3>ใช้ฟรีได้ถึงเมื่อไหร่</h3></summary><p>ตลอดไป Gate เป็น Apache-2.0 ใช้ในเชิงพาณิชย์ได้ ส่วน <a href="pro/">FirmAlways Pro</a> เป็นส่วนเสริมสำหรับองค์กรที่ต้องการนโยบายแยกแผนกและรายงานสำหรับ DPO</p></details>
+      <div class="section-head"><h2 id="faq-title">คำถามที่พบบ่อย</h2></div>
+      <div class="faq">
+        <details><summary><h3>ใช้แล้วองค์กรผ่าน PDPA เลยไหม</h3></summary><p>ไม่ Gate ช่วยลดความเสี่ยงและช่วยงานด้าน PDPA แต่การปฏิบัติตามกฎหมายยังต้องมีนโยบาย ความยินยอม สัญญากับผู้ประมวลผล และบันทึก ROPA</p></details>
+        <details><summary><h3>ตรวจจับได้ครบ 100% ไหม</h3></summary><p>ไม่มีเครื่องมือไหนทำได้ เราเปิดเผยผลทดสอบและข้อจำกัดไว้ใน GitHub และถ้าพบช่องโหว่ แจ้งได้ตาม SECURITY.md</p></details>
+        <details><summary><h3>ซ่อนชื่อแล้ว AI ยังรู้อะไรได้บ้าง</h3></summary><p>บริบทในประโยคยังอยู่ เช่น ความลับทางธุรกิจที่ไม่ได้เป็นข้อมูลส่วนบุคคล ถ้าข้อมูลลับมาก ใช้โมเดลในเครื่องเป็นปลายทางได้</p></details>
+        <details><summary><h3>ใช้ฟรีได้ถึงเมื่อไหร่</h3></summary><p>ตลอดไป Gate เป็น Apache-2.0 ใช้ในเชิงพาณิชย์ได้ ส่วน <a href="pro/">FirmAlways Pro</a> เป็นส่วนเสริมสำหรับองค์กรที่ต้องการนโยบายแยกแผนกและรายงานสำหรับ DPO</p></details>
+      </div>
     </div>
   </section>
 </main>
@@ -237,9 +356,10 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
       <a href="pro/">FirmAlways Pro</a>
       <a href="https://github.com/firmalways/gate/blob/main/SECURITY.md">แจ้งช่องโหว่</a>
       <a href="https://github.com/firmalways/gate">GitHub</a>
+      <a href="en/" hreflang="en" lang="en">English</a>
     </nav>
   </div>
 </footer>
-<script src="assets/demo.js?v=3" defer></script>
+<script src="assets/demo.js?v=4" defer></script>
 </body>
 </html>

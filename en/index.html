@@ -14,7 +14,7 @@
   <link rel="icon" href="../assets/brand/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../assets/style.css?v=3">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Gate">
@@ -76,12 +76,13 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./"><img src="../assets/brand/logo-64.png" alt="" width="36" height="36">FirmAlways Gate</a>
+    <a class="brand" href="./"><img src="../assets/brand/logo-64.png" alt="" width="32" height="32">FirmAlways Gate</a>
     <nav class="nav" aria-label="Main menu">
-      <a href="#how">How it works</a>
       <a href="#detect">What it detects</a>
+      <a href="#flow">How it works</a>
+      <a href="#risks">Risks</a>
+      <a href="#law">Law</a>
       <a href="#install">Install</a>
-      <a href="#benchmark">Benchmark</a>
       <a href="pro/">Pro</a>
       <a href="https://github.com/firmalways/gate">GitHub</a>
       <a class="lang" href="../" hreflang="th" lang="th" title="ภาษาไทย">TH</a>
@@ -94,21 +95,23 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
+          <p class="pill">Open source, free, runs in your own systems</p>
           <h1 id="hero-title">Mask personal data before it reaches AI with FirmAlways Gate</h1>
-          <p class="lead">The AI gets your question, not your customers' data. Gate masks Thai ID numbers, names, phone numbers, bank accounts and PDPA sensitive data before a prompt leaves your organisation, then puts the real values back into the answer. Free, and every line of code is open for review.</p>
+          <p class="lead">The AI gets your question, not your customers' data. Gate masks Thai ID numbers, names, addresses, birth dates, phone numbers, bank accounts and PDPA sensitive data before a prompt leaves your organisation, then puts the real values back into the answer.</p>
           <div class="actions">
             <a class="button primary" href="#install">Install Gate</a>
             <a class="button" href="https://github.com/firmalways/gate">View the code on GitHub</a>
           </div>
         </div>
-        <img src="../assets/brand/logo-256.png" alt="The FirmAlways mascot, a data gatekeeper in a purple hat" width="280" height="280" fetchpriority="high">
+        <img src="../assets/brand/logo-256.png" alt="The FirmAlways mascot, a data gatekeeper" width="260" height="260" fetchpriority="high">
       </div>
 
       <h2 class="demo-heading">See what the AI would receive</h2>
       <div class="demo">
         <div class="demo-pane">
           <label for="demo-input">What you type (edit it)</label>
-          <textarea id="demo-input" spellcheck="false">Draft a payment reminder to นางสาวสมศรี รักไทย, ID 1-1017-00203-61-1, phone 081-234-5678, and copy somsri@example.co.th</textarea>
+          <textarea id="demo-input" spellcheck="false">Draft a payment reminder to นางสาวสมศรี รักไทย, ID 1-1017-00203-61-1, date of birth 1987-03-12, phone 081-234-5678, cc somsri@example.co.th
+Address: ธันยาคารคอนโดมิเนียม 50/38 ซอยลาดพร้าว 38 ถนนลาดพร้าว แขวงสามเสนนอก เขตห้วยขวาง กรุงเทพมหานคร 10310</textarea>
         </div>
         <div class="demo-pane">
           <span class="demo-title" id="demo-output-label">What the AI receives</span>
@@ -116,52 +119,164 @@
         </div>
         <p class="demo-status" id="demo-status" role="status"></p>
       </div>
-      <p class="demo-note">This demo runs only in your browser, sends nothing anywhere, and uses a small subset of Gate's real rules.</p>
+      <p class="demo-note">This demo runs only in your browser, sends nothing anywhere, and uses the same core rules as Gate. Type "diagnosed with cancer" or "password: 1234abcd" to see a block.</p>
     </div>
   </section>
 
-  <section id="how" aria-labelledby="how-title">
+  <section id="detect" class="alt" aria-labelledby="detect-title">
     <div class="wrap">
-      <h2 id="how-title">How FirmAlways Gate works</h2>
-      <p class="prose">Gate sits between your apps and your AI provider. It works with any tool that speaks the OpenAI API: change only <code>base_url</code>.</p>
-      <ol class="steps">
-        <li><h3>Inspect text and files</h3><p>Finds Thai personal data with rules that know Thai formats, such as the national ID checksum and names written without spaces.</p></li>
-        <li><h3>Mask or block</h3><p>Replaces real values with <span class="tok">«PERSON_1»</span> before sending, and sends nothing at all if it finds passwords, API keys or section 26 sensitive data.</p></li>
-        <li><h3>Restore in the answer</h3><p>When the AI replies, Gate puts the real values back on your side and masks new personal data the AI may have produced.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="detect" class="tinted" aria-labelledby="detect-title">
-    <div class="wrap">
-      <h2 id="detect-title">Personal data FirmAlways Gate detects</h2>
-      <div class="groups">
-        <div class="group">
-          <h3>Data that identifies a person</h3>
-          <div class="item"><h4>Thai national ID</h4><p>13 digits with checksum, in Arabic or Thai digits, in any grouping.</p></div>
-          <div class="item"><h4>Person names</h4><p>Names after a title such as นาย, นางสาว, คุณ or Mr., and untitled names with the Thai NER option.</p></div>
-          <div class="item"><h4>Phone, email and LINE ID</h4><p>Mobile, landline and +66 numbers, including text written right next to Thai words.</p></div>
-          <div class="item"><h4>Addresses</h4><p>House number, moo, soi, road, subdistrict, district, province and postal code.</p></div>
-        </div>
-        <div class="group">
-          <h3>Financial, document and system data</h3>
-          <div class="item"><h4>Bank accounts and cards</h4><p>Thai bank account numbers and Luhn-valid card numbers.</p></div>
-          <div class="item"><h4>Passports and licence plates</h4><p>Passport numbers, Thai licence plates and company tax IDs.</p></div>
-          <div class="item"><h4>Secrets and IP addresses</h4><p>API keys, tokens, private keys and passwords, blocked by default.</p></div>
-          <div class="item"><h4>Attached files</h4><p>Reads text from txt, csv, docx and pdf and masks it before sending.</p></div>
-        </div>
-        <div class="group s26">
-          <h3>Sensitive data under PDPA section 26</h3>
-          <p>Health, religion, criminal records, disability, biometric and genetic data, political opinions, trade union membership, sexual behaviour and race. Gate blocks these when they appear next to a person. General questions such as "What are the symptoms of diabetes?" still go through.</p>
-        </div>
+      <div class="section-head">
+        <h2 id="detect-title">Personal data FirmAlways Gate detects</h2>
+        <p class="lead">It knows Thai formats that foreign tools often miss, such as the national ID checksum, names written without spaces and addresses with building names.</p>
+      </div>
+      <h3 class="group-title">Identity and ID card details</h3>
+      <div class="grid cols-3">
+        <div class="card"><h4>Thai national ID</h4><p>13 digits with checksum, in Arabic or Thai digits, in any grouping.</p></div>
+        <div class="card"><h4>Person names</h4><p>Names after a title such as นาย, นางสาว, คุณ or Mr., and untitled names with the Thai NER option.</p></div>
+        <div class="card"><h4>Full addresses</h4><p>Condo or building name, house number such as 50/38, moo, soi, road, subdistrict, district, province and postal code.</p></div>
+        <div class="card"><h4>Birth date and nationality</h4><p>Dates of birth in numbers or Thai and English month names, and nationality when it sits next to a person.</p></div>
+        <div class="card"><h4>Phone, email and LINE ID</h4><p>Mobile, landline and +66 numbers, including text written right next to Thai words.</p></div>
+        <div class="card"><h4>Passports and licence plates</h4><p>Passport numbers, Thai licence plates and company tax IDs.</p></div>
+      </div>
+      <h3 class="group-title">Financial and system data</h3>
+      <div class="grid cols-3">
+        <div class="card"><h4>Bank accounts and cards</h4><p>Thai bank account numbers and Luhn-valid card numbers.</p></div>
+        <div class="card"><h4>Secrets and IP addresses</h4><p>API keys, tokens, private keys and passwords, blocked by default.</p></div>
+        <div class="card"><h4>Attached files</h4><p>Reads text from txt, csv, docx and pdf and masks it before sending.</p></div>
+      </div>
+      <div class="callout">
+        <h3>PDPA section 26 sensitive data is blocked</h3>
+        <p>Health, blood type, religion, criminal records, disability, biometric and genetic data, political opinions, trade union membership, sexual behaviour and race. When it appears next to a person, Gate does not send the text at all. <a href="#law">See the legal reasons</a></p>
       </div>
     </div>
   </section>
 
-  <section id="install" class="install" aria-labelledby="install-title">
+  <section id="flow" aria-labelledby="flow-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="flow-title">How FirmAlways Gate works</h2>
+        <p class="lead">Gate sits between your employees' apps and your AI provider. It works with any tool that speaks the OpenAI API: change only <code>base_url</code>.</p>
+      </div>
+      <ol class="flow" aria-label="Processing steps">
+        <li><div class="node"><span class="step">1</span><h3>An employee types or attaches a file</h3><p>In the apps they already use, the browser extension or the API.</p></div></li>
+        <li><div class="node"><span class="step">2</span><h3>Gate inspects Thai data</h3><p>On your machine or in your cloud. The text goes nowhere else.</p></div></li>
+        <li class="branch">
+          <div class="node red"><span class="step">3</span><h3>Block</h3><p>Passwords, API keys or section 26 data about a person: nothing is sent.</p></div>
+          <div class="node blue"><span class="step">3</span><h3>Mask</h3><p>Real values become <span class="tok">«PERSON_1»</span>, then the prompt goes to the AI.</p></div>
+        </li>
+        <li><div class="node"><span class="step">4</span><h3>The AI replies</h3><p>Gate restores the real values and masks new personal data the AI may produce.</p></div></li>
+        <li><div class="node"><span class="step">5</span><h3>A complete answer</h3><p>The audit log records only counts and data types, never the text.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="risks" class="alt" aria-labelledby="risks-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="risks-title">What happens when the data reaches fraudsters</h2>
+        <p class="lead">Text pasted into a personal AI chat may be stored outside your organisation. If it leaks through a hacked account, the provider's systems or a shared conversation link, fraudsters no longer have to guess: they have real details to sound credible.</p>
+      </div>
+      <div class="grid cols-2">
+        <article class="card danger scenario">
+          <h3><span class="num">1</span>Posing as a child or relative</h3>
+          <ul class="badges"><li class="badge red">Full name</li><li class="badge red">Address</li><li class="badge red">Phone</li></ul>
+          <p>A fraudster calls a customer's parents, uses the real name and the correct address, and says their child had an accident and needs money for treatment now. The real details leave no time for doubt.</p>
+          <p class="result">The family transfers money that is rarely recovered.</p>
+        </article>
+        <article class="card danger scenario">
+          <h3><span class="num">2</span>Call-centre gangs posing as officials</h3>
+          <ul class="badges"><li class="badge red">National ID</li><li class="badge red">Birth date</li><li class="badge red">ID card address</li></ul>
+          <p>The caller claims to be police or a state officer, reads out the victim's ID number and birth date to "verify" them, then says their account is linked to money laundering and must be moved for "inspection".</p>
+          <p class="result">Victims believe it because the caller knows what only the state should know.</p>
+        </article>
+        <article class="card danger scenario">
+          <h3><span class="num">3</span>Opening accounts or loans in someone's name</h3>
+          <ul class="badges"><li class="badge red">National ID</li><li class="badge red">Birth date</li><li class="badge red">Nationality</li></ul>
+          <p>ID card details pass weak identity checks to open mule accounts, sign up for services or apply for loans in the owner's name.</p>
+          <p class="result">Debts and court cases land on a person who knew nothing.</p>
+        </article>
+        <article class="card danger scenario">
+          <h3><span class="num">4</span>Blackmail and discrimination with sensitive data</h3>
+          <ul class="badges"><li class="badge red">Health results</li><li class="badge red">Blood type</li><li class="badge red">Religion</li></ul>
+          <p>Health records, chronic conditions or criminal history are used for extortion, or to deny someone a job or insurance.</p>
+          <p class="result">Harm to lives and reputations that cannot be undone.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="law" aria-labelledby="law-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="law-title">Why organisations must care: the law requires it, and the harm is real</h2>
+        <p class="lead">If one employee pastes customer data into an AI chat and it leaks, liability does not stop with the employee. The company, as the data controller, is liable too: civil, criminal and administrative.</p>
+      </div>
+
+      <div class="law-block">
+        <h3>Sensitive data under PDPA section 26</h3>
+        <p class="muted prose">Thailand's Personal Data Protection Act B.E. 2562 (2019) requires explicit consent before collecting, using or disclosing these categories, unless a legal exception applies. ID card details such as address, birth date and nationality are personal data that make impersonation easy, so Gate masks them too.</p>
+        <ul class="badges">
+          <li class="badge red">Race and ethnicity</li><li class="badge red">Political opinions</li><li class="badge red">Religious or philosophical beliefs</li><li class="badge red">Sexual behaviour</li><li class="badge red">Criminal records</li><li class="badge red">Health data</li><li class="badge red">Disability</li><li class="badge red">Trade union information</li><li class="badge red">Genetic data</li><li class="badge red">Biometric data</li>
+        </ul>
+      </div>
+
+      <div class="law-block">
+        <h3>What the law requires of organisations</h3>
+        <div class="grid cols-3">
+          <div class="card"><h4>Section 37(1)</h4><p>Provide appropriate security measures to prevent loss, unauthorised access, use, alteration or disclosure of personal data.</p></div>
+          <div class="card"><h4>Section 37(4)</h4><p>Report a personal data breach to the PDPC Office within 72 hours of becoming aware of it, and inform the data subjects when the risk is high.</p></div>
+          <div class="card"><h4>Section 40</h4><p>Data processors, such as AI providers, must keep data secure and report incidents to the controller, so you must know what you sent to whom.</p></div>
+        </div>
+      </div>
+
+      <div class="law-block">
+        <h3>Penalties when data leaks</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Type</th><th scope="col">Section</th><th scope="col">Penalty</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Civil</th><td>77, 78</td><td>Compensation for actual damage even without intent or negligence, plus punitive damages of up to twice the actual damage.</td></tr>
+              <tr><th scope="row">Criminal</th><td>79</td><td>Unlawful use or disclosure of sensitive data: up to 6 months' imprisonment or a fine of up to THB 500,000. For unlawful gain: up to 1 year or THB 1,000,000.</td></tr>
+              <tr><th scope="row">Executives</th><td>81</td><td>Directors or managers whose orders or omissions caused the company's offence are punished too.</td></tr>
+              <tr><th scope="row">Administrative</th><td>82–84</td><td>Fines of up to THB 1, 3 and 5 million by type of breach, including missing security measures or breach notification (section 83) and violations involving sensitive data (section 84).</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">These penalties are already enforced: in 2024 the PDPC Office announced a THB 7 million fine against a private company after leaked customer data was used in scams.</p>
+      </div>
+
+      <div class="law-block">
+        <h3>If an employee leaks customer data, what happens to the company</h3>
+        <ol class="steps-list">
+          <li><strong>The employee is held responsible</strong>: disciplinary action, and possible prosecution for unlawful disclosure.</li>
+          <li><strong>The company must notify the PDPC Office within 72 hours</strong> and say what data, whose, went where. Without that, the risk cannot even be assessed.</li>
+          <li><strong>Customers sue for damages</strong>: the company is liable even without intent, and may pay punitive damages on top.</li>
+          <li><strong>Investigation and fines</strong>: no security measures, no backups, no record of processing or no breach notification can mean administrative fines of several million baht.</li>
+          <li><strong>Trust is lost</strong>: customers and partners walk away, which often costs more than the fine.</li>
+        </ol>
+      </div>
+
+      <div class="law-block">
+        <h3>Related international standards</h3>
+        <div class="grid cols-3">
+          <div class="card"><h4>ISO/IEC 27001:2022</h4><p>Information security management. Controls A.8.11 Data masking and A.8.12 Data leakage prevention match what Gate does, along with A.5.34 Privacy and protection of PII.</p></div>
+          <div class="card"><h4>ISO/IEC 27701:2019</h4><p>The privacy extension to ISO 27001, covering personal data management as a controller and as a processor.</p></div>
+          <div class="card"><h4>ISO/IEC 42001:2023</h4><p>AI management systems: control the data used with AI and assess the risks to individuals.</p></div>
+        </div>
+        <div class="grid cols-3 spaced">
+          <div class="card safe"><h4>Mask before sending</h4><p>Customer data is far less likely to leave the organisation in the first place.</p></div>
+          <div class="card safe"><h4>Answer within 72 hours</h4><p>The audit log shows which data types went to which provider and when, without storing content.</p></div>
+          <div class="card safe"><h4>Block section 26 data</h4><p>Sensitive data about a person is never sent out.</p></div>
+        </div>
+        <p class="disclaimer">A summary for understanding, not legal advice. Gate reduces risk and provides evidence for your controls, but it does not by itself make an organisation PDPA compliant or ISO certified. Check the statutes and consult your legal adviser.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="install alt" aria-labelledby="install-title">
     <div class="wrap prose">
       <h2 id="install-title">Install FirmAlways Gate</h2>
-      <p>Requires Python 3.11 or newer, or Docker.</p>
+      <p class="muted">Requires Python 3.11 or newer, or Docker.</p>
       <h3>Install script</h3>
       <pre><code>curl -fsSL https://firmalways.meapplication.co.th/install.sh | sh</code></pre>
       <p>The script installs the latest release with uv, pipx or pip. <a href="../install.sh">Read it before running it</a>, or use the same script from the GitHub release.</p>
@@ -178,29 +293,31 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="benchmark" class="tinted" aria-labelledby="benchmark-title">
+  <section id="benchmark" aria-labelledby="benchmark-title">
     <div class="wrap">
-      <h2 id="benchmark-title">Benchmark on Thai text</h2>
-      <p class="prose">50 prompts with 54 labelled values, compared with Microsoft Presidio in its default English setup. The test set is written by the maintainers and not yet reviewed externally. <a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">Method and limits</a></p>
+      <div class="section-head">
+        <h2 id="benchmark-title">Benchmark on Thai text</h2>
+        <p class="lead">54 prompts with 61 labelled values, compared with Microsoft Presidio in its default English setup. The test set is written by the maintainers and not yet reviewed externally. <a href="https://github.com/firmalways/gate/blob/main/docs/benchmark.md">Method and limits</a></p>
+      </div>
       <div class="table-wrap">
         <table>
           <caption>Share of personal data found, higher is better</caption>
           <thead><tr><th scope="col">Metric</th><th scope="col" class="num">FirmAlways Gate</th><th scope="col" class="num">Gate + Thai NER</th><th scope="col" class="num">Presidio (default)</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Values found</th><td class="num win">94.4%</td><td class="num win">98.2%</td><td class="num lose">53.7%</td></tr>
-            <tr><th scope="row">Precision</th><td class="num win">100%</td><td class="num">98.2%</td><td class="num lose">74.1%</td></tr>
+            <tr><th scope="row">Values found</th><td class="num win">95.1%</td><td class="num win">98.4%</td><td class="num lose">49.2%</td></tr>
+            <tr><th scope="row">Precision</th><td class="num win">100%</td><td class="num">98.4%</td><td class="num lose">74.6%</td></tr>
             <tr><th scope="row">Thai national ID</th><td class="num win">100%</td><td class="num win">100%</td><td class="num lose">0%</td></tr>
-            <tr><th scope="row">Health data (s.26)</th><td class="num win">100%</td><td class="num win">100%</td><td class="num lose">33%</td></tr>
+            <tr><th scope="row">Date of birth</th><td class="num win">100%</td><td class="num win">100%</td><td class="num lose">0%</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <section id="promises" aria-labelledby="promises-title">
+  <section id="supports" class="alt" aria-labelledby="supports-title">
     <div class="wrap">
-      <h2 id="promises-title">What FirmAlways Gate supports</h2>
-      <ul class="promises">
+      <div class="section-head"><h2 id="supports-title">What FirmAlways Gate supports</h2></div>
+      <ul class="checks">
         <li>Runs on your machine or in your cloud. Gate never contacts our servers.</li>
         <li>If inspection fails, nothing is forwarded. Data never leaves uninspected.</li>
         <li>The audit log records only counts and data types, never prompts, answers or real values.</li>
@@ -210,13 +327,15 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </div>
   </section>
 
-  <section id="faq" class="tinted" aria-labelledby="faq-title">
+  <section id="faq" aria-labelledby="faq-title">
     <div class="wrap">
-      <h2 id="faq-title">Frequently asked questions</h2>
-      <details><summary><h3>Does using Gate make my organisation PDPA compliant?</h3></summary><p>No. Gate reduces risk and supports PDPA work, but compliance still needs policies, consent, processor agreements and a record of processing activities (ROPA).</p></details>
-      <details><summary><h3>Does it detect 100% of personal data?</h3></summary><p>No tool can. We publish our test results and limits on GitHub, and you can report a weakness privately as described in SECURITY.md.</p></details>
-      <details><summary><h3>What can the AI still learn once names are masked?</h3></summary><p>The context of the sentence remains, for example business secrets that are not personal data. For very sensitive work, send requests to a local model instead.</p></details>
-      <details><summary><h3>How long is it free?</h3></summary><p>Forever. Gate is Apache-2.0 and free for commercial use. <a href="pro/">FirmAlways Pro</a> is an add-on for organisations that need per-department policies and reports for their DPO.</p></details>
+      <div class="section-head"><h2 id="faq-title">Frequently asked questions</h2></div>
+      <div class="faq">
+        <details><summary><h3>Does using Gate make my organisation PDPA compliant?</h3></summary><p>No. Gate reduces risk and supports PDPA work, but compliance still needs policies, consent, processor agreements and a record of processing activities (ROPA).</p></details>
+        <details><summary><h3>Does it detect 100% of personal data?</h3></summary><p>No tool can. We publish our test results and limits on GitHub, and you can report a weakness privately as described in SECURITY.md.</p></details>
+        <details><summary><h3>What can the AI still learn once names are masked?</h3></summary><p>The context of the sentence remains, for example business secrets that are not personal data. For very sensitive work, send requests to a local model instead.</p></details>
+        <details><summary><h3>How long is it free?</h3></summary><p>Forever. Gate is Apache-2.0 and free for commercial use. <a href="pro/">FirmAlways Pro</a> is an add-on for organisations that need per-department policies and reports for their DPO.</p></details>
+      </div>
     </div>
   </section>
 </main>
@@ -232,6 +351,6 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
     </nav>
   </div>
 </footer>
-<script src="../assets/demo.js?v=3" defer></script>
+<script src="../assets/demo.js?v=4" defer></script>
 </body>
 </html>
