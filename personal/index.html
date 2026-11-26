@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FirmAlways Personal</title>
-  <meta name="description" content="ส่วนขยายเบราว์เซอร์ฟรี ซ่อนชื่อ เบอร์โทร เลขบัตรประชาชน ที่อยู่ และรหัสผ่าน ก่อนส่งให้ ChatGPT, Claude, Gemini ใช้บัญชีเดิม ทำงานในเครื่อง ไม่ต้องใช้ Terminal">
+  <meta name="description" content="Hook ฟรีแบบ RTK สำหรับ ChatGPT Desktop, Codex และ Claude Code ตรวจข้อความในเครื่องก่อนส่งให้ AI กันชื่อ เบอร์โทร เลขบัตรประชาชน และรหัสผ่านไม่ให้หลุดออกไป">
   <link rel="canonical" href="https://firmalways.meapplication.co.th/personal/">
   <link rel="alternate" hreflang="th" href="https://firmalways.meapplication.co.th/personal/">
   <link rel="alternate" hreflang="en" href="https://firmalways.meapplication.co.th/en/personal/">
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Personal">
-  <meta property="og:description" content="ซ่อนข้อมูลส่วนตัวก่อนส่งให้ AI ฟรี ทำงานในเครื่อง ใช้บัญชี ChatGPT, Claude, Gemini เดิม">
+  <meta property="og:description" content="Hook ฟรีที่ตรวจข้อความในเครื่องก่อนส่งให้ AI ใช้กับ ChatGPT Desktop, Codex และ Claude Code">
   <meta property="og:url" content="https://firmalways.meapplication.co.th/personal/">
   <meta property="og:image" content="https://firmalways.meapplication.co.th/assets/brand/og-image.png?v=2">
   <meta property="og:image:width" content="1200">
@@ -27,7 +27,7 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FirmAlways Personal">
-  <meta name="twitter:description" content="ซ่อนข้อมูลส่วนตัวก่อนส่งให้ AI ฟรี ทำงานในเครื่อง ใช้บัญชี ChatGPT, Claude, Gemini เดิม">
+  <meta name="twitter:description" content="Hook ฟรีที่ตรวจข้อความในเครื่องก่อนส่งให้ AI ใช้กับ ChatGPT Desktop, Codex และ Claude Code">
   <meta name="twitter:image" content="https://firmalways.meapplication.co.th/assets/brand/og-image.png?v=2">
   <script type="application/ld+json">
 {
@@ -51,9 +51,9 @@
     {
       "@type": "SoftwareApplication",
       "name": "FirmAlways Personal",
-      "applicationCategory": "BrowserApplication",
+      "applicationCategory": "SecurityApplication",
       "operatingSystem": "Chrome, Edge, Brave, Arc",
-      "softwareVersion": "0.1.0",
+      "softwareVersion": "0.2.0",
       "description": "ส่วนขยายเบราว์เซอร์ฟรี ซ่อนชื่อ เบอร์โทร เลขบัตรประชาชน ที่อยู่ และรหัสผ่าน ก่อนส่งให้ ChatGPT, Claude, Gemini ใช้บัญชีเดิม ทำงานในเครื่อง ไม่ต้องใช้ Terminal",
       "url": "https://firmalways.meapplication.co.th/personal/",
       "downloadUrl": "https://github.com/firmalways/personal/releases/latest",
@@ -96,7 +96,7 @@
   <div class="wrap">
     <a class="brand" href="../"><img src="../assets/brand/logo-64.png?v=2" alt="" width="32" height="32">FirmAlways Personal</a>
     <nav class="nav" aria-label="เมนูหลัก">
-      <a href="#features">ความสามารถ</a>
+      <a href="#how">ทำงานอย่างไร</a>
       <a href="#install">ติดตั้ง</a>
       <a href="#privacy">ความเป็นส่วนตัว</a>
       <a href="../">Gate</a>
@@ -113,10 +113,10 @@
         <div>
           <p class="pill">ฟรีตลอด ไม่จำกัดจำนวนข้อความ ทำงานในเครื่องของคุณ</p>
           <h1 id="hero-title">FirmAlways Personal ใช้ AI ได้เหมือนเดิม โดยข้อมูลส่วนตัวไม่หลุดออกไป</h1>
-          <p class="lead">ส่วนขยายเบราว์เซอร์ที่ตรวจข้อความก่อนส่งให้ ChatGPT, Claude, Gemini, Copilot, Perplexity และ DeepSeek ข้อมูลส่วนบุคคลถูกแทนด้วย «PHONE_1» รหัสผ่านไม่ถูกส่ง และคำตอบแสดงค่าจริงบนจอคุณ ใช้บัญชีเดิม ไม่ต้องมี API key ไม่ต้องใช้ Terminal</p>
+          <p class="lead">Hook ที่ติดตั้งครั้งเดียวแบบ RTK แล้วตรวจทุกข้อความก่อนส่งให้ AI ใน ChatGPT Desktop, Codex และ Claude Code ถ้าพบชื่อ เบอร์โทร เลขบัตรประชาชน หรือรหัสผ่าน ข้อความนั้นจะไม่ถูกส่ง และฉบับที่ซ่อนข้อมูลแล้วจะอยู่ในคลิปบอร์ดให้กดวางแล้วส่งต่อได้ทันที</p>
           <div class="actions">
-            <a class="button primary" href="https://github.com/firmalways/personal/releases/latest">ดาวน์โหลดฟรี</a>
-            <a class="button" href="#install">วิธีติดตั้ง 1 นาที</a>
+            <a class="button primary" href="#install">ติดตั้งฟรีด้วยคำสั่งเดียว</a>
+            <a class="button" href="#how">ดูว่าทำงานอย่างไร</a>
           </div>
         </div>
         <img src="../assets/brand/logo-256.png?v=2" alt="มาสคอต FirmAlways ผู้เฝ้าประตูข้อมูล" width="260" height="260" fetchpriority="high">
@@ -124,39 +124,38 @@
     </div>
   </section>
 
-  <section id="features" data-glow="sky" aria-labelledby="features-title">
+  <section id="how" data-glow="sky" aria-labelledby="how-title">
     <div class="wrap">
-      <h2 id="features-title">สิ่งที่ FirmAlways Personal ทำให้คุณ</h2>
+      <h2 id="how-title">ทำงานอย่างไร</h2>
       <div class="groups">
         <div class="group">
-          <h3>ปกป้องทุกครั้งที่ใช้ AI</h3>
-          <div class="item"><h4>ตรวจตอนวางและก่อนกดส่ง</h4><p>ข้อความที่วางถูกตรวจก่อนเข้าไปในช่องพิมพ์ ข้อความที่พิมพ์เองถูกตรวจเมื่อกด Enter หรือปุ่มส่ง</p></div>
-          <div class="item"><h4>ซ่อนแล้วคืนค่า</h4><p>เลขบัตรประชาชน (ตรวจ checksum) เบอร์โทร อีเมล บัญชี บัตร ชื่อที่มีคำนำหน้า ที่อยู่ วันเกิด ถูกแทนด้วย placeholder แล้วแสดงค่าจริงในคำตอบให้คุณคนเดียว</p></div>
-          <div class="item"><h4>ไม่ส่งสิ่งที่ไม่ควรส่ง</h4><p>รหัสผ่าน API key และข้อมูลอ่อนไหวตามมาตรา 26 ที่อยู่คู่กับตัวบุคคล ถูกหยุดไว้ก่อนออกจากเครื่อง</p></div>
-          <div class="item"><h4>Privacy Mirror</h4><p>ดูข้อความของคุณเทียบกับสิ่งที่ AI ได้รับจริง จะให้ถามก่อนส่งทุกครั้งก็ได้</p></div>
+          <h3>ก่อนข้อความออกจากเครื่อง</h3>
+          <div class="item"><h4>คุณพิมพ์</h4><p><code>ร่างจดหมายถึงนายสมชาย ใจดี โทร 081-234-5678</code></p></div>
+          <div class="item"><h4>FirmAlways กันไว้</h4><p>ข้อความนี้ไม่ถูกส่ง แอปแสดงว่า hook หยุดไว้ พร้อมบอกว่าพบข้อมูลประเภทใด</p></div>
+          <div class="item"><h4>คุณกดวาง (⌘V) แล้วส่ง</h4><p><code>ร่างจดหมายถึงนาย«PERSON_1» โทร «PHONE_1»</code> AI เห็นแค่ placeholder</p></div>
         </div>
         <div class="group">
-          <h3>ปรับได้เต็มที่ ฟรีทั้งหมด</h3>
-          <div class="item"><h4>Basic และ Advanced Mode</h4><p>สวิตช์ 4 ตัวสำหรับคนทั่วไป หรือเลือกการทำงานรายประเภท: ส่งปกติ แจ้งเตือน ถามก่อน ซ่อน ลบทิ้ง บล็อก</p></div>
-          <div class="item"><h4>คำลับและกฎของคุณ</h4><p>เพิ่มชื่อโปรเจกต์ ชื่อลูกค้า หรือรูปแบบรหัสพนักงานที่ต้องการปกป้อง</p></div>
-          <div class="item"><h4>Policy Library</h4><p>Thailand PDPA Baseline, Global Privacy Baseline, Personal Finance Protection (OTP, CVV, PIN) และ Developer Secret Protection พร้อมแหล่งอ้างอิงกฎหมายและ ISO</p></div>
-          <div class="item"><h4>รายงานความเป็นส่วนตัว</h4><p>ดูว่า 7 หรือ 30 วันที่ผ่านมา คุณเกือบส่งข้อมูลอะไรให้ AI บ้าง เก็บแค่จำนวนและประเภท ไม่เก็บข้อความ</p></div>
+          <h3>เมื่อ AI ทำงานในเครื่องคุณ</h3>
+          <div class="item"><h4>ใส่ค่าจริงกลับลงไฟล์</h4><p>เมื่อ AI เขียนไฟล์ในเครื่องคุณ FirmAlways ใส่ชื่อและเบอร์จริงกลับให้ ตัว AI ยังเห็นแค่ placeholder และจะไม่ข้ามขั้นที่ต้องให้คุณอนุมัติ</p></div>
+          <div class="item"><h4>ไม่ส่งสิ่งที่ไม่ควรส่ง</h4><p>รหัสผ่าน API key และข้อมูลอ่อนไหวตามมาตรา 26 ที่อยู่คู่กับตัวบุคคล ถูกตัดออกเป็น «REMOVED_…» เสมอ</p></div>
+          <div class="item"><h4>ส่งต้นฉบับได้เมื่อจำเป็น</h4><p>รัน <code>firmalways allow-next</code> แล้วส่งข้อความเดิมอีกครั้ง ใช้ได้ครั้งเดียว ยกเว้นรหัสลับ</p></div>
         </div>
       </div>
-      <p class="prose after-groups">มีหน้าสแกนเอกสารสำหรับข้อความและไฟล์ .txt .md .csv .json .docx และเอกสารหนึ่งหน้าสำหรับแนะนำ FirmAlways ให้หัวหน้าหรือ DPO โดยไม่แนบข้อมูลการใช้งานของคุณ</p>
     </div>
   </section>
 
   <section id="install" class="install" data-glow="indigo" aria-labelledby="install-title">
     <div class="wrap prose">
-      <h2 id="install-title">ติดตั้งใน 1 นาที</h2>
-      <p class="muted">ใช้ได้กับ Chrome, Edge, Brave, Arc และเบราว์เซอร์ที่ใช้ Chromium ระหว่างรอขึ้น Chrome Web Store ให้ติดตั้งจากไฟล์ดังนี้</p>
+      <h2 id="install-title">ติดตั้งด้วยคำสั่งเดียว</h2>
+      <p class="muted">ใช้ได้บน macOS, Linux และ Windows (WSL) ต้องมี Node.js 18 ขึ้นไป สคริปต์ดาวน์โหลดจาก GitHub ตรวจ SHA-256 แล้วเพิ่ม hook ให้ Codex, ChatGPT Desktop และ Claude Code ที่พบในเครื่อง</p>
+      <pre><code>curl -fsSL https://firmalways.meapplication.co.th/personal/install.sh | sh</code></pre>
       <ol class="steps-install">
-        <li>ดาวน์โหลด <a href="https://github.com/firmalways/personal/releases/latest">firmalways-personal-v0.1.0.zip</a> แล้วแตกไฟล์</li>
-        <li>เปิด <code>chrome://extensions</code> (Edge ใช้ <code>edge://extensions</code>) แล้วเปิด <strong>Developer mode</strong></li>
-        <li>กด <strong>Load unpacked</strong> แล้วเลือกโฟลเดอร์ที่แตกไว้ จากนั้นเปิด ChatGPT, Claude หรือ Gemini ใช้งานได้ทันที</li>
+        <li>รันคำสั่งด้านบนใน Terminal (อ่านสคริปต์ก่อนได้ที่ <a href="install.sh">install.sh</a>)</li>
+        <li>เปิด ChatGPT Desktop หรือ Codex ไปที่ Settings → Hooks แล้วกด <strong>Trust</strong> ให้ <code>firmalways hook codex</code> (Codex ให้ตรวจ hook ใหม่ก่อนใช้งานทุกครั้ง)</li>
+        <li>ลองดูผลโดยไม่ส่งจริง: <code>firmalways check "โทร 081-234-5678"</code></li>
       </ol>
-      <p>โค้ดทั้งหมดเปิดให้ตรวจสอบบน <a href="https://github.com/firmalways/personal">GitHub</a> ภายใต้ Apache-2.0</p>
+      <p>คำสั่งที่ใช้บ่อย: <code>firmalways status</code>, <code>firmalways report</code>, <code>firmalways clip</code> (ทำคลิปบอร์ดให้ปลอดภัยก่อนวางในเว็บ AI), <code>firmalways off</code> และ <code>firmalways uninstall</code></p>
+      <p>ใช้ AI บนเว็บเป็นหลัก? มี<a href="https://github.com/firmalways/personal/releases/latest">ส่วนขยายเบราว์เซอร์</a>สำหรับ Chrome, Edge และ Brave ด้วย โค้ดทั้งหมดอยู่บน <a href="https://github.com/firmalways/personal">GitHub</a> ภายใต้ Apache-2.0</p>
     </div>
   </section>
 
@@ -164,19 +163,20 @@
     <div class="wrap">
       <h2 id="privacy-title">ข้อความของคุณไม่ไปไหน</h2>
       <ul class="checks">
-        <li>ตรวจในเบราว์เซอร์ของคุณ ส่วนขยายไม่ส่งข้อความหรือข้อมูลการใช้งานไปที่ FirmAlways หรือที่อื่น</li>
-        <li>ค่าจริงที่ซ่อนไว้อยู่ในหน่วยความจำ หายไปเมื่อปิดเบราว์เซอร์ หรือเมื่อกด "ล้างค่าจริง"</li>
-        <li>รายงานเก็บเฉพาะจำนวน ประเภทข้อมูล และชื่อเว็บ ไม่เก็บข้อความ</li>
+        <li>ตรวจในเครื่องของคุณ FirmAlways ไม่ส่งข้อความหรือข้อมูลการใช้งานไปที่ FirmAlways หรือที่อื่น</li>
+        <li>ค่าจริงที่ซ่อนไว้เก็บในเครื่อง (<code>~/.firmalways</code> สิทธิ์เฉพาะคุณ) และลบอัตโนมัติหลัง 24 ชั่วโมง หรือเมื่อรัน <code>firmalways forget</code></li>
+        <li>รายงานเก็บเฉพาะจำนวนและประเภทข้อมูล ไม่เก็บข้อความ</li>
         <li>ฟรีตลอด ไม่จำกัดจำนวนข้อความ และไม่ลดความแม่นยำเพื่อให้อัปเกรด</li>
       </ul>
       <h3 class="spaced">ข้อจำกัดที่ควรรู้</h3>
       <ul class="checks">
-        <li>ข้อความที่พิมพ์เองจะอยู่ในช่องพิมพ์ของเว็บก่อนกดส่ง เว็บนั้นอ่านได้ทางเทคนิค การวางข้อความปลอดภัยกว่าเพราะถูกตรวจก่อน</li>
-        <li>ยังไม่ตรวจไฟล์และรูปที่อัปโหลด เสียง และแอปมือถือ ให้ใช้หน้าสแกนเอกสารทำฉบับที่ปลอดภัยก่อน</li>
-        <li>ชื่อที่ไม่มีคำนำหน้า และข้อมูลที่ระบุตัวตนได้จากบริบทเท่านั้น อาจตรวจไม่พบ</li>
-        <li>ข้อมูลที่แทนด้วย placeholder ยังเป็นข้อมูลส่วนบุคคลตาม PDPA เครื่องมือนี้ช่วยลดความเสี่ยง ไม่ได้ทำให้ผ่านกฎหมายโดยอัตโนมัติ</li>
+        <li>Hook แก้ข้อความที่คุณส่งไม่ได้ ทำได้แค่หยุดไว้ คุณจึงต้องกดวางฉบับที่ซ่อนแล้วส่งอีกครั้ง</li>
+        <li>แอป ChatGPT อาจตั้งชื่อแชตใหม่จากข้อความแรก ซึ่ง hook ควบคุมไม่ได้ ถ้าข้อความแรกมีข้อมูลส่วนตัว ให้รัน <code>firmalways clip</code> ก่อนวาง</li>
+        <li>คำตอบในแอปยังแสดงเป็น placeholder คัดลอกคำตอบแล้วรัน <code>firmalways clip --restore</code> เพื่อใส่ค่าจริงกลับ</li>
+        <li>ยังไม่ตรวจไฟล์และรูปที่แนบ และสิ่งที่ AI อ่านจากไฟล์ในเครื่อง (การปกป้องระบบและไฟล์อยู่ใน FirmAlways Gate)</li>
+        <li>ชื่อที่ไม่มีคำนำหน้า และข้อมูลที่ระบุตัวตนได้จากบริบทเท่านั้น อาจตรวจไม่พบ ข้อมูลที่แทนด้วย placeholder ยังเป็นข้อมูลส่วนบุคคลตาม PDPA</li>
       </ul>
-      <p class="prose spaced">ถ้าต้องการปกป้องระบบที่สร้างเอง ดู <a href="../">FirmAlways Gate</a> และถ้าองค์กรต้องการบังคับนโยบายให้ทุกคน ดู <a href="../pro/">FirmAlways Pro</a></p>
+      <p class="prose spaced">ถ้าต้องการปกป้องระบบและไฟล์ที่ AI agent เข้าถึง ดู <a href="../">FirmAlways Gate</a> และถ้าองค์กรต้องการบังคับนโยบายให้ทุกคน ดู <a href="../pro/">FirmAlways Pro</a></p>
     </div>
   </section>
 </main>
