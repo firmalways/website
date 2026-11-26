@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png?v=2">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/ibm-plex-sans-thai-700-thai.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css?v=6">
+  <link rel="stylesheet" href="assets/style.css?v=7">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Gate">
@@ -60,7 +60,7 @@
       "name": "FirmAlways Gate",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "macOS, Linux, Windows",
-      "softwareVersion": "0.2.0",
+      "softwareVersion": "0.3.0",
       "description": "ด่านกรองข้อมูลส่วนบุคคลภาษาไทยแบบโอเพนซอร์ส ซ่อนข้อมูลก่อนส่งให้ AI และคืนค่าจริงในคำตอบ",
       "url": "https://firmalways.meapplication.co.th/",
       "downloadUrl": "https://github.com/firmalways/gate/releases/latest",
@@ -89,6 +89,7 @@
       <a href="#risks">ความเสี่ยง</a>
       <a href="#law">กฎหมาย</a>
       <a href="#install">ติดตั้ง</a>
+      <a href="personal/">Personal</a>
       <a href="pro/">Pro</a>
       <a href="https://github.com/firmalways/gate">GitHub</a>
       <a class="lang" href="en/" hreflang="en" lang="en" title="English">EN</a>
@@ -101,12 +102,12 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <p class="pill">โอเพนซอร์ส ใช้ฟรี ติดตั้งในระบบของคุณเอง</p>
+          <p class="pill">ใหม่: FirmAlways Personal ฟรีสำหรับทุกคน ไม่ต้องใช้ Terminal</p>
           <h1 id="hero-title">ซ่อนข้อมูลส่วนบุคคลก่อนส่งให้ AI ด้วย FirmAlways Gate</h1>
           <p class="lead">AI ได้คำถามของคุณ แต่ไม่ได้ข้อมูลลูกค้าของคุณ Gate ซ่อนเลขบัตรประชาชน ชื่อ ที่อยู่ วันเกิด เบอร์โทร เลขบัญชี และข้อมูลอ่อนไหวตาม PDPA ก่อนข้อความออกจากองค์กร แล้วใส่ค่าจริงคืนในคำตอบให้คุณ</p>
           <div class="actions">
-            <a class="button primary" href="#install">ติดตั้ง Gate</a>
-            <a class="button" href="https://github.com/firmalways/gate">ดูโค้ดบน GitHub</a>
+            <a class="button primary" href="personal/">ติดตั้ง Personal ฟรี</a>
+            <a class="button" href="#install">ติดตั้ง Gate สำหรับนักพัฒนา</a>
           </div>
         </div>
         <img src="assets/brand/logo-256.png?v=2" alt="มาสคอต FirmAlways ผู้เฝ้าประตูข้อมูล" width="260" height="260" fetchpriority="high">
@@ -126,6 +127,54 @@
         <p class="demo-status" id="demo-status" role="status"></p>
       </div>
       <p class="demo-note">ตัวอย่างนี้ทำงานในเบราว์เซอร์ของคุณเท่านั้น ไม่ส่งข้อความไปที่ใด และใช้กฎชุดหลักชุดเดียวกับ Gate ลองพิมพ์ "เป็นเบาหวาน" หรือ "password: 1234abcd" เพื่อดูการบล็อก</p>
+    </div>
+  </section>
+
+  <section id="editions" data-glow="indigo" aria-labelledby="editions-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="editions-title">เลือก FirmAlways ที่เหมาะกับคุณ</h2>
+        <p class="lead">ทั้งสามแบบใช้แกนตรวจจับเดียวกัน ความแม่นยำเท่ากัน สิ่งที่ต่างคือขอบเขตที่ปกป้องและใครเป็นผู้กำหนดนโยบาย</p>
+      </div>
+      <div class="tiers">
+        <article class="tier featured">
+          <span class="tag">ฟรี</span>
+          <h3>FirmAlways Personal</h3>
+          <p class="motto">ปกป้องตัวคุณเอง สำหรับทุกคนที่ใช้ AI</p>
+          <ul>
+            <li>ส่วนขยายเบราว์เซอร์ ใช้บัญชี ChatGPT, Claude, Gemini เดิม</li>
+            <li>ซ่อนข้อมูลตอนวางและก่อนกดส่ง แสดงค่าจริงในคำตอบ</li>
+            <li>Privacy Mirror ดูว่า AI ได้รับอะไร</li>
+            <li>Basic และ Advanced Mode คำลับ กฎของคุณ รายงานส่วนตัว</li>
+          </ul>
+          <a class="button primary" href="personal/">ติดตั้ง Personal</a>
+        </article>
+        <article class="tier">
+          <span class="tag">Tier 1</span>
+          <h3>FirmAlways Gate</h3>
+          <p class="motto">ปกป้องระบบที่คุณสร้าง สำหรับนักพัฒนาและ SME</p>
+          <ul>
+            <li>AI Gateway และ proxy ที่รองรับ OpenAI API</li>
+            <li>CLI, สแกนไฟล์, ส่วนขยายสำหรับระบบของคุณ</li>
+            <li>นโยบายเป็นไฟล์ audit log ไม่เก็บเนื้อหา</li>
+            <li>แผนต่อไป: ป้องกัน Coding Agent, MCP และ Tool</li>
+          </ul>
+          <a class="button" href="#install">ติดตั้ง Gate</a>
+        </article>
+        <article class="tier">
+          <span class="tag">Tier 2</span>
+          <h3>FirmAlways Pro</h3>
+          <p class="motto">กำกับดูแล AI ทั้งองค์กร สำหรับ IT, CISO และ DPO</p>
+          <ul>
+            <li>นโยบายกลางแยกตามแผนก</li>
+            <li>รายงาน PDPA ภาษาไทยสำหรับ DPO และ ROPA</li>
+            <li>license ออฟไลน์ ติดตั้งในระบบขององค์กร</li>
+            <li>ช่วยติดตั้งและดูแล</li>
+          </ul>
+          <a class="button" href="pro/">ดู FirmAlways Pro</a>
+        </article>
+      </div>
+      <p class="tiers-note">ความปลอดภัยพื้นฐานฟรีสำหรับทุกคน ไม่จำกัดจำนวนข้อความ ส่วนการเชื่อมระบบ การควบคุม และการกำกับดูแลองค์กรคือบริการแบบเสียเงิน Gate รุ่นปัจจุบัน (Alpha) ยังเป็นโอเพนซอร์สและใช้ฟรี</p>
     </div>
   </section>
 
@@ -215,7 +264,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2 id="law-title">ทำไมองค์กรต้องใส่ใจ: กฎหมายบังคับ และอันตรายจริง</h2>
-        <p class="lead">ถ้าพนักงานคนหนึ่งวางข้อมูลลูกค้าลงในแชต AI แล้วข้อมูลหลุด ความรับผิดไม่ได้จบที่พนักงาน บริษัทในฐานะผู้ควบคุมข้อมูลส่วนบุคคลต้องรับผิดด้วย ทั้งทางแพ่ง ทางอาญา และค่าปรับทางปกครอง</p>
+        <p class="lead">ถ้าพนักงานคนหนึ่งวางข้อมูลลูกค้าลงในแชต AI แล้วข้อมูลหลุด ความรับผิดอาจไม่จบที่พนักงาน บริษัทในฐานะผู้ควบคุมข้อมูลส่วนบุคคลอาจต้องรับผิดด้วย ทั้งทางแพ่ง ทางอาญา และค่าปรับทางปกครอง ตามข้อเท็จจริงและองค์ประกอบความผิดของแต่ละกรณี</p>
       </div>
 
       <div class="law-block">
@@ -230,8 +279,8 @@
         <h3>หน้าที่ขององค์กรตามกฎหมาย</h3>
         <div class="grid cols-3">
           <div class="card"><h4>มาตรา 37(1)</h4><p>ต้องมีมาตรการรักษาความมั่นคงปลอดภัยที่เหมาะสม ป้องกันการสูญหาย การเข้าถึง ใช้ เปลี่ยนแปลง หรือเปิดเผยข้อมูลโดยมิชอบ</p></div>
-          <div class="card"><h4>มาตรา 37(4)</h4><p>เมื่อข้อมูลรั่วไหล ต้องแจ้งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) ภายใน 72 ชั่วโมง และแจ้งเจ้าของข้อมูลหากมีความเสี่ยงสูง</p></div>
-          <div class="card"><h4>มาตรา 40</h4><p>ผู้ประมวลผลข้อมูล เช่น ผู้ให้บริการ AI ต้องมีมาตรการรักษาความปลอดภัยและแจ้งเหตุต่อผู้ควบคุมข้อมูล องค์กรจึงต้องรู้ว่าส่งข้อมูลอะไรไปให้ใคร</p></div>
+          <div class="card"><h4>มาตรา 37(4)</h4><p>เมื่อข้อมูลรั่วไหล ต้องแจ้งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) โดยไม่ชักช้าภายใน 72 ชั่วโมงนับแต่ทราบเหตุเท่าที่จะทำได้ เว้นแต่เหตุนั้นไม่มีความเสี่ยงที่จะกระทบสิทธิและเสรีภาพของบุคคล และแจ้งเจ้าของข้อมูลพร้อมแนวทางเยียวยาหากมีความเสี่ยงสูง</p></div>
+          <div class="card"><h4>มาตรา 40</h4><p>ผู้ประมวลผลข้อมูลต้องมีมาตรการรักษาความปลอดภัยและแจ้งเหตุต่อผู้ควบคุมข้อมูล ผู้ให้บริการ AI อาจเป็นผู้ประมวลผลหรือผู้ควบคุมข้อมูลก็ได้ ขึ้นกับลักษณะบริการและการใช้ข้อมูลจริง องค์กรจึงต้องประเมินบทบาท และรู้ว่าส่งข้อมูลอะไรไปให้ใคร</p></div>
         </div>
       </div>
 
@@ -255,8 +304,8 @@
         <h3>ถ้าพนักงานทำข้อมูลลูกค้าหลุด จะเกิดอะไรขึ้นกับบริษัท</h3>
         <ol class="steps-list">
           <li><strong>พนักงานต้องรับผิดชอบ</strong> ถูกสอบสวนทางวินัย และอาจถูกดำเนินคดีหากเปิดเผยข้อมูลโดยมิชอบ</li>
-          <li><strong>บริษัทต้องแจ้ง สคส. ภายใน 72 ชั่วโมง</strong> และต้องบอกได้ว่าข้อมูลอะไร ของใคร ถูกส่งไปที่ไหน ถ้าตอบไม่ได้ก็ประเมินความเสี่ยงไม่ได้</li>
-          <li><strong>ลูกค้าฟ้องเรียกค่าเสียหาย</strong> บริษัทต้องรับผิดแม้ไม่ได้ตั้งใจ และอาจเสียค่าสินไหมเชิงลงโทษเพิ่ม</li>
+          <li><strong>บริษัทต้องแจ้ง สคส. ภายใน 72 ชั่วโมงนับแต่ทราบเหตุ</strong> (เว้นแต่ไม่มีความเสี่ยงต่อเจ้าของข้อมูล) และต้องบอกได้ว่าข้อมูลอะไร ของใคร ถูกส่งไปที่ไหน ถ้าตอบไม่ได้ก็ประเมินความเสี่ยงไม่ได้</li>
+          <li><strong>ลูกค้าฟ้องเรียกค่าเสียหาย</strong> บริษัทอาจต้องรับผิดแม้ไม่ได้ตั้งใจ และอาจเสียค่าสินไหมเชิงลงโทษเพิ่ม</li>
           <li><strong>ถูกตรวจสอบและปรับ</strong> หากพบว่าไม่มีมาตรการป้องกัน ไม่มีการสำรองข้อมูล ไม่มีบันทึกการประมวลผล หรือไม่แจ้งเหตุ อาจถูกปรับทางปกครองหลายล้านบาท</li>
           <li><strong>ความเชื่อมั่นหายไป</strong> ลูกค้าและคู่ค้าเลิกไว้ใจ ซึ่งมักแพงกว่าค่าปรับ</li>
         </ol>
@@ -266,15 +315,15 @@
         <h3>มาตรฐานสากลที่เกี่ยวข้อง</h3>
         <div class="grid cols-3">
           <div class="card"><h4>ISO/IEC 27001:2022</h4><p>ระบบบริหารความมั่นคงปลอดภัยสารสนเทศ มาตรการ A.8.11 Data masking และ A.8.12 Data leakage prevention ตรงกับสิ่งที่ Gate ทำ รวมถึง A.5.34 การคุ้มครองข้อมูลส่วนบุคคล</p></div>
-          <div class="card"><h4>ISO/IEC 27701:2019</h4><p>ส่วนขยายด้านความเป็นส่วนตัวของ ISO 27001 กำหนดการจัดการข้อมูลส่วนบุคคลทั้งในฐานะผู้ควบคุมและผู้ประมวลผล</p></div>
+          <div class="card"><h4>ISO/IEC 27701:2025</h4><p>ระบบบริหารจัดการข้อมูลส่วนบุคคล (PIMS) ฉบับ 2025 เป็นมาตรฐานที่ใช้ได้โดยลำพัง กำหนดการจัดการข้อมูลส่วนบุคคลทั้งในฐานะผู้ควบคุมและผู้ประมวลผล</p></div>
           <div class="card"><h4>ISO/IEC 42001:2023</h4><p>ระบบบริหารจัดการ AI กำหนดให้องค์กรควบคุมข้อมูลที่ใช้กับ AI และประเมินความเสี่ยงต่อบุคคล</p></div>
         </div>
         <div class="grid cols-3 spaced">
           <div class="card safe"><h4>ซ่อนก่อนส่ง</h4><p>ลดโอกาสที่ข้อมูลลูกค้าจะออกนอกองค์กรตั้งแต่ต้นทาง</p></div>
-          <div class="card safe"><h4>บอกได้ภายใน 72 ชั่วโมง</h4><p>audit log บอกว่าข้อมูลประเภทใดถูกส่งไปผู้ให้บริการรายใดเมื่อไร โดยไม่เก็บเนื้อหา</p></div>
-          <div class="card safe"><h4>บล็อกข้อมูลมาตรา 26</h4><p>ข้อมูลอ่อนไหวคู่กับตัวบุคคลไม่ถูกส่งออกไปเลย</p></div>
+          <div class="card safe"><h4>หลักฐานประกอบการสอบสวน</h4><p>audit log บอกว่าข้อมูลประเภทใดถูกส่งไปผู้ให้บริการรายใดเมื่อไร โดยไม่เก็บเนื้อหา ช่วยประกอบการประเมินเหตุ แต่ไม่ใช้แทนการประเมินเหตุทั้งหมด</p></div>
+          <div class="card safe"><h4>บล็อกข้อมูลมาตรา 26</h4><p>ข้อมูลอ่อนไหวคู่กับตัวบุคคลไม่ถูกส่งออกไปตามนโยบายเริ่มต้นของ FirmAlways กฎหมายไม่ได้ห้ามทุกกรณี องค์กรปรับได้ตามฐานทางกฎหมายที่มี</p></div>
         </div>
-        <p class="disclaimer">สรุปเพื่อความเข้าใจ ไม่ใช่คำแนะนำทางกฎหมาย Gate ช่วยลดความเสี่ยงและเป็นหลักฐานประกอบมาตรการ แต่ไม่ได้ทำให้องค์กรผ่าน PDPA หรือได้รับการรับรอง ISO โดยอัตโนมัติ กรุณาตรวจสอบตัวบทและปรึกษาที่ปรึกษากฎหมาย</p>
+        <p class="disclaimer">สรุปเพื่อความเข้าใจ ไม่ใช่คำแนะนำทางกฎหมาย Gate ช่วยลดความเสี่ยงและเป็นหลักฐานประกอบมาตรการ แต่ไม่ได้ทำให้องค์กรผ่าน PDPA หรือได้รับการรับรอง ISO โดยอัตโนมัติ ข้อมูลที่แทนด้วย placeholder ที่คืนค่าได้ยังถือเป็นข้อมูลส่วนบุคคล (pseudonymisation) กรุณาตรวจสอบตัวบทและปรึกษาที่ปรึกษากฎหมาย</p>
       </div>
     </div>
   </section>
@@ -282,7 +331,7 @@
   <section id="install" class="install" data-glow="indigo" aria-labelledby="install-title">
     <div class="wrap prose">
       <h2 id="install-title">ติดตั้ง FirmAlways Gate</h2>
-      <p class="muted">ต้องมี Python 3.11 ขึ้นไป หรือ Docker</p>
+      <p class="muted">สำหรับนักพัฒนาและผู้ดูแลระบบ ต้องมี Python 3.11 ขึ้นไป หรือ Docker ถ้าใช้ AI ผ่านเว็บอย่างเดียว <a href="personal/">ติดตั้ง FirmAlways Personal</a> ง่ายกว่า ไม่ต้องใช้ Terminal</p>
       <h3>สคริปต์ติดตั้ง</h3>
       <pre><code>curl -fsSL https://firmalways.meapplication.co.th/install.sh | sh</code></pre>
       <p>สคริปต์ติดตั้งเวอร์ชันล่าสุดด้วย uv, pipx หรือ pip <a href="install.sh">อ่านสคริปต์ก่อนรัน</a> หรือใช้สคริปต์เดียวกันจาก GitHub release</p>
@@ -295,7 +344,7 @@
       <h3>ใช้กับแอปที่มีอยู่</h3>
       <pre><code>from openai import OpenAI
 client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GATE_API_KEY&gt;")</code></pre>
-      <p>ใช้ได้กับ OpenAI, Azure OpenAI ในบัญชีของคุณเอง, endpoint ที่รองรับ OpenAI API และโมเดลในเครื่อง เช่น Ollama ดูวิธีตั้งค่าทั้งหมดใน <a href="https://github.com/firmalways/gate#readme">README</a> และส่วนขยายเบราว์เซอร์สำหรับ ChatGPT, Claude และ Gemini ใน <a href="https://github.com/firmalways/gate/tree/main/extension">extension</a></p>
+      <p>ใช้ได้กับ OpenAI, Azure OpenAI ในบัญชีของคุณเอง, endpoint ที่รองรับ OpenAI API และโมเดลในเครื่อง เช่น Ollama ดูวิธีตั้งค่าทั้งหมดใน <a href="https://github.com/firmalways/gate#readme">README</a> ส่วนผู้ใช้เว็บ ChatGPT, Claude และ Gemini ใช้ <a href="personal/">FirmAlways Personal</a></p>
     </div>
   </section>
 
@@ -349,7 +398,7 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
       <nav aria-labelledby="footer-col-0"><h2 class="footer-title" id="footer-col-0">ผลิตภัณฑ์</h2><ul class="footer-links">
         <li><a href="">FirmAlways Gate</a></li>
         <li><a href="pro/">FirmAlways Pro</a></li>
-        <li><a href="https://github.com/firmalways/gate/tree/main/extension">ส่วนขยายเบราว์เซอร์</a></li>
+        <li><a href="personal/">FirmAlways Personal (ฟรี)</a></li>
         <li><a href="https://github.com/firmalways/gate/releases/latest">ดาวน์โหลดเวอร์ชันล่าสุด</a></li>
       </ul></nav>
       <nav aria-labelledby="footer-col-1"><h2 class="footer-title" id="footer-col-1">เอกสาร</h2><ul class="footer-links">

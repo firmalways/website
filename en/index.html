@@ -14,7 +14,7 @@
   <link rel="icon" href="../assets/brand/favicon-32.png?v=2" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png?v=2">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../assets/style.css?v=6">
+  <link rel="stylesheet" href="../assets/style.css?v=7">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FirmAlways">
   <meta property="og:title" content="FirmAlways Gate">
@@ -49,7 +49,7 @@
       "name": "FirmAlways Gate",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "macOS, Linux, Windows",
-      "softwareVersion": "0.2.0",
+      "softwareVersion": "0.3.0",
       "description": "Open-source AI privacy gateway for Thai personal data: masks data before it reaches an AI provider and restores it in the answer.",
       "url": "https://firmalways.meapplication.co.th/en/",
       "downloadUrl": "https://github.com/firmalways/gate/releases/latest",
@@ -80,6 +80,7 @@
       <a href="#risks">Risks</a>
       <a href="#law">Law</a>
       <a href="#install">Install</a>
+      <a href="personal/">Personal</a>
       <a href="pro/">Pro</a>
       <a href="https://github.com/firmalways/gate">GitHub</a>
       <a class="lang" href="../" hreflang="th" lang="th" title="ภาษาไทย">TH</a>
@@ -92,12 +93,12 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <p class="pill">Open source, free, runs in your own systems</p>
+          <p class="pill">New: FirmAlways Personal, free for everyone, no terminal needed</p>
           <h1 id="hero-title">Mask personal data before it reaches AI with FirmAlways Gate</h1>
           <p class="lead">The AI gets your question, not your customers' data. Gate masks Thai ID numbers, names, addresses, birth dates, phone numbers, bank accounts and PDPA sensitive data before a prompt leaves your organisation, then puts the real values back into the answer.</p>
           <div class="actions">
-            <a class="button primary" href="#install">Install Gate</a>
-            <a class="button" href="https://github.com/firmalways/gate">View the code on GitHub</a>
+            <a class="button primary" href="personal/">Get Personal, free</a>
+            <a class="button" href="#install">Install Gate for developers</a>
           </div>
         </div>
         <img src="../assets/brand/logo-256.png?v=2" alt="The FirmAlways mascot, a data gatekeeper" width="260" height="260" fetchpriority="high">
@@ -117,6 +118,54 @@ Address: ถนนลาดพร้าว แขวงสามเสนนอ�
         <p class="demo-status" id="demo-status" role="status"></p>
       </div>
       <p class="demo-note">This demo runs only in your browser, sends nothing anywhere, and uses the same core rules as Gate. Type "diagnosed with cancer" or "password: 1234abcd" to see a block.</p>
+    </div>
+  </section>
+
+  <section id="editions" data-glow="indigo" aria-labelledby="editions-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="editions-title">Choose the FirmAlways that fits you</h2>
+        <p class="lead">All three use the same detection core with the same accuracy. They differ in what they protect and who sets the policy.</p>
+      </div>
+      <div class="tiers">
+        <article class="tier featured">
+          <span class="tag">Free</span>
+          <h3>FirmAlways Personal</h3>
+          <p class="motto">Protect yourself. For everyone who uses AI.</p>
+          <ul>
+            <li>Browser extension; keep your ChatGPT, Claude or Gemini account</li>
+            <li>Masks on paste and before send; real values back in answers</li>
+            <li>Privacy Mirror shows what the AI received</li>
+            <li>Basic and Advanced mode, keywords, your own rules, personal report</li>
+          </ul>
+          <a class="button primary" href="personal/">Get Personal</a>
+        </article>
+        <article class="tier">
+          <span class="tag">Tier 1</span>
+          <h3>FirmAlways Gate</h3>
+          <p class="motto">Protect the systems you build. For developers and SMEs.</p>
+          <ul>
+            <li>AI gateway and OpenAI-compatible proxy</li>
+            <li>CLI, file scanning, integration with your systems</li>
+            <li>Policy as a file, content-free audit log</li>
+            <li>Next: coding agent, MCP and tool guards</li>
+          </ul>
+          <a class="button" href="#install">Install Gate</a>
+        </article>
+        <article class="tier">
+          <span class="tag">Tier 2</span>
+          <h3>FirmAlways Pro</h3>
+          <p class="motto">Govern AI across the organisation. For IT, CISOs and DPOs.</p>
+          <ul>
+            <li>Central policy per department</li>
+            <li>Thai PDPA reports for the DPO and ROPA</li>
+            <li>Offline licence, runs in your own systems</li>
+            <li>Help with setup and operation</li>
+          </ul>
+          <a class="button" href="pro/">See FirmAlways Pro</a>
+        </article>
+      </div>
+      <p class="tiers-note">Basic security is free for everyone, with no message limits. Integration, control and organisation-wide governance are paid. The current Gate (alpha) is still open source and free.</p>
     </div>
   </section>
 
@@ -206,7 +255,7 @@ Address: ถนนลาดพร้าว แขวงสามเสนนอ�
     <div class="wrap">
       <div class="section-head">
         <h2 id="law-title">Why organisations must care: the law requires it, and the harm is real</h2>
-        <p class="lead">If one employee pastes customer data into an AI chat and it leaks, liability does not stop with the employee. The company, as the data controller, is liable too: civil, criminal and administrative.</p>
+        <p class="lead">If one employee pastes customer data into an AI chat and it leaks, liability may not stop with the employee. The company, as the data controller, may be liable too: civil, criminal and administrative, depending on the facts of each case.</p>
       </div>
 
       <div class="law-block">
@@ -221,8 +270,8 @@ Address: ถนนลาดพร้าว แขวงสามเสนนอ�
         <h3>What the law requires of organisations</h3>
         <div class="grid cols-3">
           <div class="card"><h4>Section 37(1)</h4><p>Provide appropriate security measures to prevent loss, unauthorised access, use, alteration or disclosure of personal data.</p></div>
-          <div class="card"><h4>Section 37(4)</h4><p>Report a personal data breach to the PDPC Office within 72 hours of becoming aware of it, and inform the data subjects when the risk is high.</p></div>
-          <div class="card"><h4>Section 40</h4><p>Data processors, such as AI providers, must keep data secure and report incidents to the controller, so you must know what you sent to whom.</p></div>
+          <div class="card"><h4>Section 37(4)</h4><p>Report a personal data breach to the PDPC Office without delay and, where feasible, within 72 hours of becoming aware of it, unless it is unlikely to put people's rights and freedoms at risk; inform the data subjects, with remedies, when the risk is high.</p></div>
+          <div class="card"><h4>Section 40</h4><p>Data processors must keep data secure and report incidents to the controller. An AI provider may be a processor or a controller depending on the service and how it uses the data, so assess its role and know what you sent to whom.</p></div>
         </div>
       </div>
 
@@ -246,8 +295,8 @@ Address: ถนนลาดพร้าว แขวงสามเสนนอ�
         <h3>If an employee leaks customer data, what happens to the company</h3>
         <ol class="steps-list">
           <li><strong>The employee is held responsible</strong>: disciplinary action, and possible prosecution for unlawful disclosure.</li>
-          <li><strong>The company must notify the PDPC Office within 72 hours</strong> and say what data, whose, went where. Without that, the risk cannot even be assessed.</li>
-          <li><strong>Customers sue for damages</strong>: the company is liable even without intent, and may pay punitive damages on top.</li>
+          <li><strong>The company must notify the PDPC Office within 72 hours of becoming aware</strong> (unless there is no risk to the people concerned) and say what data, whose, went where. Without that, the risk cannot even be assessed.</li>
+          <li><strong>Customers sue for damages</strong>: the company may be liable even without intent, and may pay punitive damages on top.</li>
           <li><strong>Investigation and fines</strong>: no security measures, no backups, no record of processing or no breach notification can mean administrative fines of several million baht.</li>
           <li><strong>Trust is lost</strong>: customers and partners walk away, which often costs more than the fine.</li>
         </ol>
@@ -257,15 +306,15 @@ Address: ถนนลาดพร้าว แขวงสามเสนนอ�
         <h3>Related international standards</h3>
         <div class="grid cols-3">
           <div class="card"><h4>ISO/IEC 27001:2022</h4><p>Information security management. Controls A.8.11 Data masking and A.8.12 Data leakage prevention match what Gate does, along with A.5.34 Privacy and protection of PII.</p></div>
-          <div class="card"><h4>ISO/IEC 27701:2019</h4><p>The privacy extension to ISO 27001, covering personal data management as a controller and as a processor.</p></div>
+          <div class="card"><h4>ISO/IEC 27701:2025</h4><p>The privacy information management system standard; the 2025 edition stands on its own and covers personal data management as a controller and as a processor.</p></div>
           <div class="card"><h4>ISO/IEC 42001:2023</h4><p>AI management systems: control the data used with AI and assess the risks to individuals.</p></div>
         </div>
         <div class="grid cols-3 spaced">
           <div class="card safe"><h4>Mask before sending</h4><p>Customer data is far less likely to leave the organisation in the first place.</p></div>
-          <div class="card safe"><h4>Answer within 72 hours</h4><p>The audit log shows which data types went to which provider and when, without storing content.</p></div>
-          <div class="card safe"><h4>Block section 26 data</h4><p>Sensitive data about a person is never sent out.</p></div>
+          <div class="card safe"><h4>Evidence for an investigation</h4><p>The audit log shows which data types went to which provider and when, without storing content. It supports an incident assessment; it does not replace one.</p></div>
+          <div class="card safe"><h4>Block section 26 data</h4><p>Sensitive data about a person is not sent, by FirmAlways' default policy. The law does not forbid it in every case; organisations can adjust it to their legal basis.</p></div>
         </div>
-        <p class="disclaimer">A summary for understanding, not legal advice. Gate reduces risk and provides evidence for your controls, but it does not by itself make an organisation PDPA compliant or ISO certified. Check the statutes and consult your legal adviser.</p>
+        <p class="disclaimer">A summary for understanding, not legal advice. Gate reduces risk and provides evidence for your controls, but it does not by itself make an organisation PDPA compliant or ISO certified. Data replaced with reversible placeholders is still personal data (pseudonymisation). Check the statutes and consult your legal adviser.</p>
       </div>
     </div>
   </section>
@@ -273,7 +322,7 @@ Address: ถนนลาดพร้าว แขวงสามเสนนอ�
   <section id="install" class="install" data-glow="indigo" aria-labelledby="install-title">
     <div class="wrap prose">
       <h2 id="install-title">Install FirmAlways Gate</h2>
-      <p class="muted">Requires Python 3.11 or newer, or Docker.</p>
+      <p class="muted">For developers and administrators. Requires Python 3.11 or newer, or Docker. If you only use AI in the browser, <a href="personal/">FirmAlways Personal</a> is easier: no terminal needed.</p>
       <h3>Install script</h3>
       <pre><code>curl -fsSL https://firmalways.meapplication.co.th/install.sh | sh</code></pre>
       <p>The script installs the latest release with uv, pipx or pip. <a href="../install.sh">Read it before running it</a>, or use the same script from the GitHub release.</p>
@@ -286,7 +335,7 @@ Address: ถนนลาดพร้าว แขวงสามเสนนอ�
       <h3>Use it with your existing apps</h3>
       <pre><code>from openai import OpenAI
 client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GATE_API_KEY&gt;")</code></pre>
-      <p>Works with OpenAI, Azure OpenAI in your own subscription, any OpenAI-compatible endpoint and local models such as Ollama. See every option in the <a href="https://github.com/firmalways/gate#readme">README</a>, and the browser extension for ChatGPT, Claude and Gemini in <a href="https://github.com/firmalways/gate/tree/main/extension">extension</a>.</p>
+      <p>Works with OpenAI, Azure OpenAI in your own subscription, any OpenAI-compatible endpoint and local models such as Ollama. See every option in the <a href="https://github.com/firmalways/gate#readme">README</a>. If you use ChatGPT, Claude or Gemini on the web, use <a href="personal/">FirmAlways Personal</a>.</p>
     </div>
   </section>
 
@@ -340,7 +389,7 @@ client = OpenAI(base_url="http://127.0.0.1:8787/v1", api_key="&lt;FIRMALWAYS_GAT
       <nav aria-labelledby="footer-col-0"><h2 class="footer-title" id="footer-col-0">Product</h2><ul class="footer-links">
         <li><a href="../en/">FirmAlways Gate</a></li>
         <li><a href="../en/pro/">FirmAlways Pro</a></li>
-        <li><a href="https://github.com/firmalways/gate/tree/main/extension">Browser extension</a></li>
+        <li><a href="personal/">FirmAlways Personal (free)</a></li>
         <li><a href="https://github.com/firmalways/gate/releases/latest">Latest release</a></li>
       </ul></nav>
       <nav aria-labelledby="footer-col-1"><h2 class="footer-title" id="footer-col-1">Docs</h2><ul class="footer-links">
