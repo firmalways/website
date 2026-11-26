@@ -53,7 +53,7 @@
       "name": "FirmAlways Personal",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "Chrome, Edge, Brave, Arc",
-      "softwareVersion": "0.2.0",
+      "softwareVersion": "0.3.0",
       "description": "ส่วนขยายเบราว์เซอร์ฟรี ซ่อนชื่อ เบอร์โทร เลขบัตรประชาชน ที่อยู่ และรหัสผ่าน ก่อนส่งให้ ChatGPT, Claude, Gemini ใช้บัญชีเดิม ทำงานในเครื่อง ไม่ต้องใช้ Terminal",
       "url": "https://firmalways.meapplication.co.th/personal/",
       "downloadUrl": "https://github.com/firmalways/personal/releases/latest",
@@ -136,6 +136,7 @@
         </div>
         <div class="group">
           <h3>เมื่อ AI ทำงานในเครื่องคุณ</h3>
+          <div class="item"><h4>ไฟล์ที่มีข้อมูลส่วนตัว AI เปิดเองไม่ได้</h4><p>ก่อน AI เปิด PDF, Word, Excel, CSV หรือรูปภาพ FirmAlways อ่านไฟล์นั้นในเครื่องก่อน รวมถึงหน้าสแกนด้วย OCR ภาษาไทย ถ้าพบข้อมูลส่วนตัว AI จะเปิดได้แค่ฉบับที่ซ่อนแล้วผ่าน <code>firmalways read</code> ถ้าคุณต้องการให้เห็นข้อมูลจริง รัน <code>firmalways allow-file ไฟล์</code> เอง</p></div>
           <div class="item"><h4>ใส่ค่าจริงกลับลงไฟล์</h4><p>เมื่อ AI เขียนไฟล์ในเครื่องคุณ FirmAlways ใส่ชื่อและเบอร์จริงกลับให้ ตัว AI ยังเห็นแค่ placeholder และจะไม่ข้ามขั้นที่ต้องให้คุณอนุมัติ</p></div>
           <div class="item"><h4>ไม่ส่งสิ่งที่ไม่ควรส่ง</h4><p>รหัสผ่าน API key และข้อมูลอ่อนไหวตามมาตรา 26 ที่อยู่คู่กับตัวบุคคล ถูกตัดออกเป็น «REMOVED_…» เสมอ</p></div>
           <div class="item"><h4>ส่งต้นฉบับได้เมื่อจำเป็น</h4><p>รัน <code>firmalways allow-next</code> แล้วส่งข้อความเดิมอีกครั้ง ใช้ได้ครั้งเดียว ยกเว้นรหัสลับ</p></div>
@@ -173,7 +174,8 @@
         <li>Hook แก้ข้อความที่คุณส่งไม่ได้ ทำได้แค่หยุดไว้ คุณจึงต้องกดวางฉบับที่ซ่อนแล้วส่งอีกครั้ง</li>
         <li>แอป ChatGPT อาจตั้งชื่อแชตใหม่จากข้อความแรก ซึ่ง hook ควบคุมไม่ได้ ถ้าข้อความแรกมีข้อมูลส่วนตัว ให้รัน <code>firmalways clip</code> ก่อนวาง</li>
         <li>คำตอบในแอปยังแสดงเป็น placeholder คัดลอกคำตอบแล้วรัน <code>firmalways clip --restore</code> เพื่อใส่ค่าจริงกลับ</li>
-        <li>ยังไม่ตรวจไฟล์และรูปที่แนบ และสิ่งที่ AI อ่านจากไฟล์ในเครื่อง (การปกป้องระบบและไฟล์อยู่ใน FirmAlways Gate)</li>
+        <li>ตัวกันไฟล์ดูจากชื่อไฟล์ในคำสั่งของ AI ถ้าคำสั่งเข้าถึงไฟล์โดยไม่ระบุชื่อ (เช่น ผ่านสคริปต์) อาจหลุดได้ จึงเป็นด่านกัน ไม่ใช่ sandbox การแยกระบบจริงอยู่ใน FirmAlways Gate</li>
+        <li>OCR อาจอ่านตารางที่แน่นบางส่วนไม่ออก ส่วนที่อ่านไม่ออกจะไม่ถูกส่งให้ AI</li>
         <li>ชื่อที่ไม่มีคำนำหน้า และข้อมูลที่ระบุตัวตนได้จากบริบทเท่านั้น อาจตรวจไม่พบ ข้อมูลที่แทนด้วย placeholder ยังเป็นข้อมูลส่วนบุคคลตาม PDPA</li>
       </ul>
       <p class="prose spaced">ถ้าต้องการปกป้องระบบและไฟล์ที่ AI agent เข้าถึง ดู <a href="../">FirmAlways Gate</a> และถ้าองค์กรต้องการบังคับนโยบายให้ทุกคน ดู <a href="../pro/">FirmAlways Pro</a></p>

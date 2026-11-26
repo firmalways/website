@@ -53,7 +53,7 @@
       "name": "FirmAlways Personal",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "Chrome, Edge, Brave, Arc",
-      "softwareVersion": "0.2.0",
+      "softwareVersion": "0.3.0",
       "description": "Free browser extension that masks names, phone numbers, Thai ID numbers, addresses and passwords before ChatGPT, Claude or Gemini see them. Local, no terminal.",
       "url": "https://firmalways.meapplication.co.th/en/personal/",
       "downloadUrl": "https://github.com/firmalways/personal/releases/latest",
@@ -136,6 +136,7 @@
         </div>
         <div class="group">
           <h3>When the AI works on your machine</h3>
+          <div class="item"><h4>Files with personal data stay closed</h4><p>Before the AI opens a PDF, Word, Excel, CSV or image, FirmAlways reads it on your machine, including scanned pages with Thai OCR. If it holds personal data, the AI only gets a masked copy through <code>firmalways read</code>. To show it the real data, run <code>firmalways allow-file file</code> yourself.</p></div>
           <div class="item"><h4>Real values go back into files</h4><p>When the AI writes a file on your machine, FirmAlways puts the real name and number back. The AI still only sees placeholders, and no approval step is ever skipped.</p></div>
           <div class="item"><h4>Never sends what it should not</h4><p>Passwords, API keys and PDPA section 26 sensitive data about a person are always cut out as «REMOVED_…».</p></div>
           <div class="item"><h4>Send the original when you must</h4><p>Run <code>firmalways allow-next</code> and send the prompt again. It works once, and never for secrets.</p></div>
@@ -173,7 +174,8 @@
         <li>A hook cannot rewrite what you send, only stop it, so you paste the safe copy and send again.</li>
         <li>The ChatGPT app may name a new chat from its first message, which hooks cannot control. If that first message has personal data, run <code>firmalways clip</code> before pasting.</li>
         <li>Answers in the app still show placeholders. Copy the answer and run <code>firmalways clip --restore</code> to put real values back.</li>
-        <li>Attached files and images, and what the AI reads from files on your machine, are not checked yet (protecting systems and files is FirmAlways Gate).</li>
+        <li>The file guard looks for file names in the AI's commands. A command that reaches a file without naming it (through a script, say) can get past it: it is a guard, not a sandbox. Enforced isolation is FirmAlways Gate.</li>
+        <li>OCR can miss parts of dense tables. What it cannot read is left out, never sent unmasked.</li>
         <li>Names without a title, and data that identifies someone only from context, may be missed. Placeholder data is still personal data under the PDPA.</li>
       </ul>
       <p class="prose spaced">To protect the systems and files AI agents can reach, see <a href="../">FirmAlways Gate</a>. For an organisation that needs one policy for everyone, see <a href="../pro/">FirmAlways Pro</a>.</p>
